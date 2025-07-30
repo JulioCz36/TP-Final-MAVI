@@ -1,0 +1,218 @@
+﻿  Afichmation.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Afichmation.cpp")
+  
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Afichmation.cpp(16,30): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Afichmation.cpp(16,18): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Afichmation.cpp(33,30): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Afichmation.cpp(33,18): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Afichmation.cpp(90,12): warning C4018: '>': no coinciden signed/unsigned
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Afichmation.cpp(102,11): warning C4244: 'inicializando': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Afichmation.cpp(102,11): warning C4244:         with
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Afichmation.cpp(102,11): warning C4244:         [
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Afichmation.cpp(102,11): warning C4244:             T=float
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Afichmation.cpp(102,11): warning C4244:         ]
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Afichmation.cpp(108,11): warning C4244: 'inicializando': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Afichmation.cpp(108,11): warning C4244:         with
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Afichmation.cpp(108,11): warning C4244:         [
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Afichmation.cpp(108,11): warning C4244:             T=float
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Afichmation.cpp(108,11): warning C4244:         ]
+  Asteroide.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Asteroide.cpp")
+  
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Asteroide.cpp(4,52): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Asteroide.cpp(4,71): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Asteroide.cpp(4,95): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Asteroide.cpp(4,113): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Asteroide.cpp(7,31): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Asteroide.cpp(23,10): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Asteroide.cpp(28,42): warning C4244: 'return': conversión de 'const int' a 'float'; posible pérdida de datos
+  Bala.cpp
+  Boss.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Boss.cpp")
+  
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Boss.cpp(92,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Boss.cpp(138,20): warning C4018: '<': no coinciden signed/unsigned
+  Caza.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Caza.cpp")
+  
+  DroneDoble.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "DroneDoble.cpp")
+  
+  DroneLigero.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "DroneLigero.cpp")
+  
+  ElegirNave.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "ElegirNave.cpp")
+  
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\ElegirNave.cpp(37,76): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\ElegirNave.cpp(37,76): warning C4244:         with
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\ElegirNave.cpp(37,76): warning C4244:         [
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\ElegirNave.cpp(37,76): warning C4244:             T=float
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\ElegirNave.cpp(37,76): warning C4244:         ]
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\ElegirNave.cpp(37,55): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\ElegirNave.cpp(37,55): warning C4244:         with
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\ElegirNave.cpp(37,55): warning C4244:         [
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\ElegirNave.cpp(37,55): warning C4244:             T=float
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\ElegirNave.cpp(37,55): warning C4244:         ]
+  Enemigo.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Enemigo.cpp")
+  
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Enemigo.cpp(11,32): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Escudo.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Escudo.cpp")
+  
+  FinDelJuego.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "FinDelJuego.cpp")
+  
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(24,7): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(34,94): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(34,94): warning C4244:         with
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(34,94): warning C4244:         [
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(34,94): warning C4244:             T=float
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(34,94): warning C4244:         ]
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(34,65): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(34,65): warning C4244:         with
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(34,65): warning C4244:         [
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(34,65): warning C4244:             T=float
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(34,65): warning C4244:         ]
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(35,91): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(35,91): warning C4244:         with
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(35,91): warning C4244:         [
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(35,91): warning C4244:             T=float
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(35,91): warning C4244:         ]
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(35,61): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(35,61): warning C4244:         with
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(35,61): warning C4244:         [
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(35,61): warning C4244:             T=float
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(35,61): warning C4244:         ]
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(51,111): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(51,111): warning C4244:         with
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(51,111): warning C4244:         [
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(51,111): warning C4244:             T=float
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(51,111): warning C4244:         ]
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(51,81): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(51,81): warning C4244:         with
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(51,81): warning C4244:         [
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(51,81): warning C4244:             T=float
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(51,81): warning C4244:         ]
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(101,39): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Habilidad.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Habilidad.cpp")
+  
+  HUDPartida.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "HUDPartida.cpp")
+  
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\HUDPartida.cpp(20,57): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\HUDPartida.cpp(34,63): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\HUDPartida.cpp(34,63): warning C4244:         with
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\HUDPartida.cpp(34,63): warning C4244:         [
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\HUDPartida.cpp(34,63): warning C4244:             T=float
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\HUDPartida.cpp(34,63): warning C4244:         ]
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\HUDPartida.cpp(38,75): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\HUDPartida.cpp(38,75): warning C4244:         with
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\HUDPartida.cpp(38,75): warning C4244:         [
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\HUDPartida.cpp(38,75): warning C4244:             T=float
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\HUDPartida.cpp(38,75): warning C4244:         ]
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\HUDPartida.cpp(96,28): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\HUDPartida.cpp(99,28): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\HUDPartida.cpp(102,39): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\HUDPartida.cpp(102,33): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  ImpactoVisual.h
+  Item.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Item.cpp")
+  
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Item.cpp(5,29): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  ItemBala.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "ItemBala.cpp")
+  
+  ItemPuntos.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "ItemPuntos.cpp")
+  
+  ItemVida.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "ItemVida.cpp")
+  
+  Juego.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Juego.cpp")
+  
+  main.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "main.cpp")
+  
+  Generando código...
+  Compilando...
+  Menu.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Menu.cpp")
+  
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Menu.cpp(21,17): warning C4244: 'inicializando': conversión de 'size_t' a 'float'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Menu.cpp(187,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Menu.cpp(193,23): warning C4018: '<': no coinciden signed/unsigned
+  MenuPrincipal.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "MenuPrincipal.cpp")
+  
+  Mirage.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Mirage.cpp")
+  
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Mirage.cpp(3,66): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Nave.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Nave.cpp")
+  
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Nave.cpp(31,20): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Nave.cpp(36,30): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+  Onyx.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Onyx.cpp")
+  
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Onyx.cpp(3,59): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Partida.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Partida.cpp")
+  
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Partida.cpp(108,47): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Partida.cpp(311,43): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:             _Ty=int
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:         ]
+  (compilando archivo de origen "Partida.cpp")
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Partida.cpp(439,25):
+          Vea la referencia a la creación de una instancia de la función plantilla "std::unique_ptr<Asteroide,std::default_delete<Asteroide>> std::make_unique<Asteroide,const char(&)[52],int,int,int,int,int,0>(const char (&)[52],int &&,int &&,int &&,int &&,int &&)" que se está compilando
+  
+  PausaMenu.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "PausaMenu.cpp")
+  
+  Rapidez.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Rapidez.cpp")
+  
+  Reloj.h
+  TorretaEspacial.cpp
+C:\Users\julio\Documents\MAVI\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "TorretaEspacial.cpp")
+  
+  Generando código...
+  TP-Final-MAVI.vcxproj -> C:\Users\julio\Documents\MAVI\TP-Final-MAVI\Debug\TP-Final-MAVI.exe

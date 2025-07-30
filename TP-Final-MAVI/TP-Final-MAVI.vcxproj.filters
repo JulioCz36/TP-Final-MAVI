@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de origen">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Items">
+      <UniqueIdentifier>{eed864b5-02ad-4e93-96f2-1c950a633226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Items">
+      <UniqueIdentifier>{c8a59daf-b599-4b0b-98c8-f357b586d831}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Escenas">
+      <UniqueIdentifier>{ab09f71c-3998-42ac-883f-efec68d3cef4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Utilidades">
+      <UniqueIdentifier>{5e8f6f17-7e8f-47d0-bd30-40f2fc70e821}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Escenas">
+      <UniqueIdentifier>{ba5606cb-d6f1-46d0-ae42-0f6dc4610f9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Balas">
+      <UniqueIdentifier>{8c923ca2-f4de-42c1-b1ab-ec433234b424}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Balas">
+      <UniqueIdentifier>{18099f2a-c045-4c19-ac86-8a71d5cbb9be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Enemigos">
+      <UniqueIdentifier>{451cefff-dd62-45f6-b06f-65706bbdad98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Enemigos">
+      <UniqueIdentifier>{b89b00e0-d0ac-476c-b29e-282fc8ff3a91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Escenas\Partida">
+      <UniqueIdentifier>{078bcd03-adf5-415a-9f2f-62980a79f810}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Escenas\Partida">
+      <UniqueIdentifier>{4f7ee5e0-11fa-49bf-b25e-0b10ac5db06d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Jugador">
+      <UniqueIdentifier>{f229b7a2-8543-4c1e-8a74-0d7b1df35893}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Jugador">
+      <UniqueIdentifier>{d069eb6e-b871-4a66-9664-52ecbe001259}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Jugador\Habilidades">
+      <UniqueIdentifier>{c10e98ec-5bf7-4c2d-ad19-78cb8362dba7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Jugador\Habilidades">
+      <UniqueIdentifier>{9e3f9d67-0d96-42f5-89d7-193fafa29de7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Utilidades">
+      <UniqueIdentifier>{e03cfcc6-c7dd-4b0f-ab4c-913693be284f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Bala.cpp">
+      <Filter>Archivos de origen\Balas</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Archivos de origen\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="DroneLigero.cpp">
+      <Filter>Archivos de origen\Enemigos</Filter>
+    </ClCompile>
+    <ClCompile Include="Caza.cpp">
+      <Filter>Archivos de origen\Enemigos</Filter>
+    </ClCompile>
+    <ClCompile Include="TorretaEspacial.cpp">
+      <Filter>Archivos de origen\Enemigos</Filter>
+    </ClCompile>
+    <ClCompile Include="PausaMenu.cpp">
+      <Filter>Archivos de origen\Escenas\Partida</Filter>
+    </ClCompile>
+    <ClCompile Include="FinDelJuego.cpp">
+      <Filter>Archivos de origen\Escenas</Filter>
+    </ClCompile>
+    <ClCompile Include="Juego.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Reloj.h">
+      <Filter>Archivos de encabezado\Utilidades</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemigo.cpp">
+      <Filter>Archivos de origen\Enemigos</Filter>
+    </ClCompile>
+    <ClCompile Include="Partida.cpp">
+      <Filter>Archivos de origen\Escenas\Partida</Filter>
+    </ClCompile>
+    <ClCompile Include="Asteroide.cpp">
+      <Filter>Archivos de origen\Escenas\Partida</Filter>
+    </ClCompile>
+    <ClCompile Include="HUDPartida.cpp">
+      <Filter>Archivos de origen\Escenas\Partida</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemVida.cpp">
+      <Filter>Archivos de origen\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemPuntos.cpp">
+      <Filter>Archivos de origen\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemBala.cpp">
+      <Filter>Archivos de origen\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Habilidad.cpp">
+      <Filter>Archivos de origen\Jugador\Habilidades</Filter>
+    </ClCompile>
+    <ClCompile Include="Escudo.cpp">
+      <Filter>Archivos de origen\Jugador\Habilidades</Filter>
+    </ClCompile>
+    <ClCompile Include="Rapidez.cpp">
+      <Filter>Archivos de origen\Jugador\Habilidades</Filter>
+    </ClCompile>
+    <ClCompile Include="Nave.cpp">
+      <Filter>Archivos de origen\Jugador</Filter>
+    </ClCompile>
+    <ClCompile Include="Mirage.cpp">
+      <Filter>Archivos de origen\Jugador</Filter>
+    </ClCompile>
+    <ClCompile Include="Onyx.cpp">
+      <Filter>Archivos de origen\Jugador</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuPrincipal.cpp">
+      <Filter>Archivos de origen\Escenas</Filter>
+    </ClCompile>
+    <ClCompile Include="ElegirNave.cpp">
+      <Filter>Archivos de origen\Escenas</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Archivos de origen\Escenas</Filter>
+    </ClCompile>
+    <ClCompile Include="ImpactoVisual.h">
+      <Filter>Archivos de encabezado\Utilidades</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Afichmation.cpp">
+      <Filter>Archivos de origen\Utilidades</Filter>
+    </ClCompile>
+    <ClCompile Include="DroneDoble.cpp">
+      <Filter>Archivos de origen\Enemigos</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bala.h">
+      <Filter>Archivos de encabezado\Balas</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Archivos de encabezado\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="DroneLigero.h">
+      <Filter>Archivos de encabezado\Enemigos</Filter>
+    </ClInclude>
+    <ClInclude Include="Caza.h">
+      <Filter>Archivos de encabezado\Enemigos</Filter>
+    </ClInclude>
+    <ClInclude Include="TorretaEspacial.h">
+      <Filter>Archivos de encabezado\Enemigos</Filter>
+    </ClInclude>
+    <ClInclude Include="PausaMenu.h">
+      <Filter>Archivos de encabezado\Escenas\Partida</Filter>
+    </ClInclude>
+    <ClInclude Include="FinDelJuego.h">
+      <Filter>Archivos de encabezado\Escenas</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Archivos de encabezado\Utilidades</Filter>
+    </ClInclude>
+    <ClInclude Include="Escenas.h">
+      <Filter>Archivos de encabezado\Escenas</Filter>
+    </ClInclude>
+    <ClInclude Include="Juego.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemigo.h">
+      <Filter>Archivos de encabezado\Enemigos</Filter>
+    </ClInclude>
+    <ClInclude Include="Partida.h">
+      <Filter>Archivos de encabezado\Escenas\Partida</Filter>
+    </ClInclude>
+    <ClInclude Include="Asteroide.h">
+      <Filter>Archivos de encabezado\Escenas\Partida</Filter>
+    </ClInclude>
+    <ClInclude Include="HUDPartida.h">
+      <Filter>Archivos de encabezado\Escenas\Partida</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemVida.h">
+      <Filter>Archivos de encabezado\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemPuntos.h">
+      <Filter>Archivos de encabezado\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemBala.h">
+      <Filter>Archivos de encabezado\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Habilidad.h">
+      <Filter>Archivos de encabezado\Jugador\Habilidades</Filter>
+    </ClInclude>
+    <ClInclude Include="Escudo.h">
+      <Filter>Archivos de encabezado\Jugador\Habilidades</Filter>
+    </ClInclude>
+    <ClInclude Include="Rapidez.h">
+      <Filter>Archivos de encabezado\Jugador\Habilidades</Filter>
+    </ClInclude>
+    <ClInclude Include="Nave.h">
+      <Filter>Archivos de encabezado\Jugador</Filter>
+    </ClInclude>
+    <ClInclude Include="Mirage.h">
+      <Filter>Archivos de encabezado\Jugador</Filter>
+    </ClInclude>
+    <ClInclude Include="Onyx.h">
+      <Filter>Archivos de encabezado\Jugador</Filter>
+    </ClInclude>
+    <ClInclude Include="Figura.h">
+      <Filter>Archivos de encabezado\Utilidades</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuPrincipal.h">
+      <Filter>Archivos de encabezado\Escenas</Filter>
+    </ClInclude>
+    <ClInclude Include="ElegirNave.h">
+      <Filter>Archivos de encabezado\Escenas</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Archivos de encabezado\Escenas</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Archivos de encabezado\Utilidades</Filter>
+    </ClInclude>
+    <ClInclude Include="Afichmation.h">
+      <Filter>Archivos de encabezado\Utilidades</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio.h">
+      <Filter>Archivos de encabezado\Utilidades</Filter>
+    </ClInclude>
+    <ClInclude Include="DroneDoble.h">
+      <Filter>Archivos de encabezado\Enemigos</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
