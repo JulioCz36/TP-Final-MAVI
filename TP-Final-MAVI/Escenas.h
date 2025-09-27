@@ -10,5 +10,5 @@ public:
 	Escena() {};
 	void virtual procesoEventos(Juego& j, Event& event) {}
 	void virtual actualizar(Juego& j) = 0;
-	void virtual dibujar(RenderWindow& w) = 0;
+	void virtual dibujar(RenderTarget& target) = 0;
 };

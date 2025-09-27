@@ -1,14 +1,11 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Item.h"
-#include "Habilidad.h"
 #include "Reloj.h"
 #include "Figura.h"
 #include "Afichmation.h"
 #include "Audio.h"
-#include "Bala.h"
 class Item;
-class Habilidad;
 class Partida;
 
 using namespace sf;
@@ -16,46 +13,34 @@ using namespace std;
 
 
 class Nave {
-protected:
-
-	Habilidad* habilidad;
-private:
 
 	Partida* partida = nullptr;
+	Figura nave;
+	Afichmation destruccion;
+	Afichmation propulsor;
 
+	// Movimiento vertical
+	float velY = 0.f;
+	float gravedad = 200.f;      // px/seg²
+	float fuerzaSalto;  // px/seg (negativo porque sube)
+	bool esperando = true;
+	
+	bool saltando = false;
+	float alturaInicioCaida = 0.f;
+	float limiteCaida = 100.f;   // “metros” antes de morir
 
-	// Parámetros de animación
-	Afichmation nave;
-	Afichmation fire;
-
-	Audio sonidoDisparo;
-
-
-	// Control de destrucción
 	bool enDestruccion = false;
 	float tiempoDestruccion = 0.3f;
 	int repeticionesDestruccion = 0;
 
-
 	// Variables de control y movimiento
-	Keyboard::Key acel = Keyboard::W;
-	Keyboard::Key retro = Keyboard::S;
-	Keyboard::Key izq = Keyboard::A;
-	Keyboard::Key der = Keyboard::D;
-	Keyboard::Key dis = Keyboard::J;
-	bool puedeDisparar = true;
-	Keyboard::Key habi = Keyboard::K;
+	Keyboard::Key salto = Keyboard::Space;
 
-	int velocidad, resistencia, resistenciaMaxima, balasEspeciales;
-	int bala_n = 2;
-	int puntos = 0;
-
-	// Disparo
-	bool dobleDisparoActivo = false;
+	int resistencia, resistenciaMaxima;
 
 	// Variables invulnerabilidad
 	bool invulnerable = false;
-	float duracionInvulnerabilidad;
+	float duracionInvulnerabilidad = 0;
 	Reloj relojInvulnerabilidad;
 
 	// Contenedores de elementos
@@ -72,7 +57,7 @@ private:
 
 
 public:
-	Nave(const string& texture, int vel, int resi);
+	Nave(float x, float y, float vel, int resi);
 
 	// ----------------- Vida e invulnerabilidad -----------------
 
@@ -82,45 +67,20 @@ public:
 	bool esInvulnerable();
 	void activarInvulnerabilidad(float segundos);
 
-	// ----------------- Habilidades -----------------
-
-	virtual void habilidadNave() = 0;
-	Habilidad* queHabilidad();
-
-	// ----------------- Disparo -----------------
-
-	void disparar();
-	void cambiarBalas(int n_bullet, int cantidad);
-	int verCanBalas();
-
-	// Doble disparo
-	void doubleBalaSi(int cantidad);
-	void doubleBalaNo();
-
 	// ----------------- Movimiento -----------------
-
-	void mover(float deltaTime);
-	void cambiarPos(float desplazamiento);
 	Vector2f verPos();
 	bool estaQuieto();
 
-	void configurarHitboxCircular(float radio, float offsetY);
-	void hitboxCircular(bool activar);
+
 	bool colisionaCon(const FloatRect& otro);
 	void dibujarHitbox(RenderWindow& w);
 	void verificarLimitesPantalla();
-	
-
-	// ----------------- Animación y estado visual -----------------
-
-	void actualizarAvance(bool avanzando);
-	void esVisible(bool visible);
 
 	// -----------------  MÉTODOS PRINCIPALES -----------------
 
 	void actualizar(float deltaTime);
 	void manejarEventos(Event& e);
-	void dibujar(RenderWindow& w);
+	void dibujar(RenderTarget& w);
 
 	// ----------------- Estado y destrucción -----------------
 
@@ -128,13 +88,13 @@ public:
 	bool estaEnDestruccion();
 	bool estaMuerto();
 
-	// ----------------- Puntos -----------------
-
-	void aumentarPuntos(int canPuntos);
-	int verPuntos();
 
 	void pausar();
 	void reanudar();
+
+	void configurarHitboxCircular(float radio, float offsetY);
+
+	void hitboxCircular(bool activar);
 
 	void setPartida(Partida* p);
 

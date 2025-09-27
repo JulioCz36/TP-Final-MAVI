@@ -23,7 +23,7 @@ public:
 	Asteroide(const string& texture, int anchura, int altura,float speedAsteroide, float vidaAsteroide, float danoAsteroide);
 
 	// ===  MÉTODOS PRINCIPALES ===
-	void dibujar(RenderWindow& window);
+	void dibujar(RenderTarget& window);
 	void actualizar(float deltaTime);
 
 	// === INTERACCIÓN ===

@@ -8,12 +8,16 @@ using namespace std;
 class Figura {
     Texture textura;
     Sprite sprite;
+    bool visible = true;
 
 public:
     Figura() {};
 
     Figura(const Figura&) = delete;
     Figura& operator=(const Figura&) = delete;
+
+    Figura(Figura&&) noexcept = default;
+    Figura& operator=(Figura&&) noexcept = default;
 
 
     void cargarImagen(const string& ruta) {
@@ -34,8 +38,14 @@ public:
         return sprite.getGlobalBounds();
     }
 
-    void dibujar(RenderWindow& ventana) {
-        ventana.draw(sprite);
+    void dibujar(RenderTarget& ventana) {
+        if (visible) {
+            ventana.draw(sprite);
+        }
+    }
+
+    void esVisible(bool v) {
+        visible = v;
     }
 
     void queOrigin(float x, float y) {

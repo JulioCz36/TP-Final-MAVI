@@ -19,14 +19,7 @@ enum class Opciones {
 	Reiniciar,
 	VolverAlMenu,
 	SalirDelJuego,
-	IniciarPartida,
-	ElegirNave,
-	Jugar,
-};
-
-enum TipoNave {
-	MIRAGE,
-	ONYX
+	Ajustes,
 };
 
 

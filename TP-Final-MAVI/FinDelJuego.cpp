@@ -1,27 +1,6 @@
 #include "FinDelJuego.h"
 
-FinDelJuego::FinDelJuego(RenderWindow& v, int enemigos, int puntos) : Menu(v,
-    {
-        Opciones::Reiniciar,
-        Opciones::VolverAlMenu,
-        Opciones::SalirDelJuego
-    },
-    {
-        "assets/menu/opciones/reiniciar_sheet.png",
-        "assets/menu/opciones/volver_al_menu_sheet.png",
-        "assets/menu/opciones/salir_del_juego_sheet.png"
-    },
-    {
-        Opciones::Reiniciar,
-        Opciones::VolverAlMenu,
-        Opciones::SalirDelJuego
-    },
-    {
-    "assets/menu/carteles/confirmar_reiniciar.png",
-    "assets/menu/carteles/confirmar_volver_al_menu.png",
-    "assets/menu/carteles/confirmar_salir_del_juego.png"
-    }
-    , 425.0, 50), digito("assets/hud/numeros_sheet.png", true, 19, 19) {
+FinDelJuego::FinDelJuego(RenderWindow& v, int kilometros) : Menu(v), digito("assets/hud/numeros_sheet.png", true, 19, 19) {
 
     for (int i = 0; i < 11; ++i) {
         digito.Add(to_string(i), { i }, 1, true);
@@ -31,9 +10,7 @@ FinDelJuego::FinDelJuego(RenderWindow& v, int enemigos, int puntos) : Menu(v,
     cartel.cargarImagen("assets/menu/carteles/fin_del_juego_loser.png");
     cartel.quePosition(1280 / 2.f, 200.5);
 
-    actualizarDigitos(enemigo, enemigos, cartel.verPosition().x - 40, cartel.verPosition().y + 18);
-    actualizarDigitos(punto, puntos, cartel.verPosition().x + 210, cartel.verPosition().y + 18);
-    puntosFinalesObjetivo = (enemigos * 100) + (puntos * 2);
+    actualizarDigitos(punto, kilometros, cartel.verPosition().x + 210, cartel.verPosition().y + 18);
     contadorActual = 0;
     relojConteo.reiniciar();
 }
@@ -52,36 +29,12 @@ void FinDelJuego::actualizar(Juego& j){
         relojConteo.reiniciar();
     }
 }
-void FinDelJuego::dibujar(RenderWindow& ventana) {
+void FinDelJuego::dibujar(RenderTarget& ventana) {
     dibujarMenu(ventana);
 
     cartel.dibujar(ventana);
-    for (auto& e : enemigo) {
-        ventana.draw(e);
-    }
     for (auto& p : punto) {
         ventana.draw(p);
-    }
-    for (auto& ps : puntosFinales) {
-        ventana.draw(ps);
-    }
-
-
-    dibujarCartelDeConfrimacion(ventana);
-}
-void FinDelJuego::ejecutarAccion(Juego& j, Opciones accion) {
-    switch (accion) {
-    case Opciones::Reiniciar:
-        j.reiniciar(); 
-        break;
-    case Opciones::VolverAlMenu:
-        j.volverAlMenu();
-        break;
-    case Opciones::SalirDelJuego:
-        j.salir();  
-        break;
-    default:
-        break;
     }
 }
 

@@ -8,8 +8,8 @@ using namespace std;
 
 class PausaMenu : public Menu{
     RectangleShape fondoOscuro;
+    Figura titulo;
 public:
     PausaMenu(RenderWindow& v);
-    void ejecutarAccion(Juego& j, Opciones accion) override;
-    void dibujarMenu(RenderWindow& ventana) override;
+    void dibujarMenu(RenderTarget& ventana) override;
 };

@@ -1,30 +1,22 @@
 #include "Nave.h"
 #include "Partida.h"
 
-Nave::Nave(const string& texture,int vel, int resi)
-    :nave(texture, true,99, 75), fire("assets/jugador/naves/fire_sheet.png",true,79,34), velocidad(vel), resistencia(resi), resistenciaMaxima(resi){
-    nave.Add("idle", { 0 }, 1, true);
-    nave.Add("destroyed", { 0 }, 60, false);
+Nave::Nave(float x, float y, float fuerza, int resi) :destruccion("assets/Jugador/nave_destruida.png", true,8, 8),
+propulsor("assets/Jugador/propulsor.png",true,8,8), fuerzaSalto(-fuerza), resistencia(resi), resistenciaMaxima(resi){
 
-    nave.Add("double-idle", { 1 }, 1, true);
-    nave.Add("shot", { 1,2,3,4,5,6,7,8,9 }, 60, false);
-    nave.Add("double-destroyed", { 0 }, 60, false);
+	nave.cargarImagen("assets/Jugador/nave.png");
+    nave.quePosition(x, y);
 
-    nave.setPosition(640, 645);
+    propulsor.Add("propulsor1", { 0,1,2,3 }, 6, true);
+    propulsor.setPosition(nave.verPosition().x, nave.verPosition().y);
+    propulsor.Add("propulsor2", { 4,5,6,7 }, 6, true);
+    
+    destruccion.Add("destruccion", { 0,1,2,3 }, 8, false);
 
-    //Hibox en personalizada;
+    //hurtbox en personalizada;
     tam_central = { 20, 75 };
     tam_superior = { 99, 30 };
     offsetYSuperior = 30;
-
-
-    fire.Add("fire1", { 0,1,2,3,4 }, 6, true);
-    fire.Add("fire2", { 5,6,7,8,9 }, 6, true);
-    fire.setPosition(nave.getPosition().x, nave.getPosition().y);
-
-    sonidoDisparo.cargar("assets/sonidos/shot.wav");
-    sonidoDisparo.queVolumen(55);
-
 }
 
 void Nave::recibirDano(float dano) {
@@ -49,208 +41,85 @@ void Nave::activarInvulnerabilidad(float segundos) {
     relojInvulnerabilidad.reiniciar();
 }
 
-Habilidad* Nave::queHabilidad() {return habilidad;}
 
-void Nave::disparar() {
-    Vector2f dir(0, -1);
-    if (dobleDisparoActivo) {
-        sonidoDisparo.play();
-        Vector2f bulletPosition(nave.getPosition().x - 26, nave.getPosition().y - nave.getGlobalBounds().height / 2);
-        partida->agregarLasersJugador(make_unique<Bala>(bala_n, bulletPosition, dir, true));
-
-        Vector2f bulletPosition2(nave.getPosition().x + 26, nave.getPosition().y - nave.getGlobalBounds().height / 2);
-        partida->agregarLasersJugador(make_unique<Bala>(bala_n, bulletPosition2, dir, true));
-
-        balasEspeciales--;
-        nave.Play("shot");
-    }
-    else {
-        sonidoDisparo.play();
-        Vector2f bulletPosition(nave.getPosition().x, nave.getPosition().y - nave.getGlobalBounds().height / 2 - 10);
-        partida->agregarLasersJugador(make_unique<Bala>(bala_n, bulletPosition, dir,true));
-        if (bala_n != 2) {
-            balasEspeciales--;
-        }
-    }
-
-    if (balasEspeciales <= 0) {
-        bala_n = 2;
-        if (dobleDisparoActivo) {
-            doubleBalaNo();
-        }
-    }
-}
-void Nave::cambiarBalas(int n_bullet, int cantidad) {
-    if (dobleDisparoActivo) {
-        doubleBalaNo();
-    }
-
-    bala_n = n_bullet;
-    balasEspeciales = cantidad;
-}
-int Nave::verCanBalas() {return balasEspeciales;}
 void Nave::setPartida(Partida* p) { partida = p; };
 
-
-void Nave::doubleBalaSi(int cantidad) {
-    nave.Play("double-idle");
-    bala_n = 2;
-    dobleDisparoActivo = true;
-    balasEspeciales = cantidad;
-}
-void Nave::doubleBalaNo() {
-    nave.Play("idle");
-    dobleDisparoActivo = false;
-}
-
-void Nave::mover(float deltaTime) {
-    float desplazamiento = velocidad * deltaTime;
-
-    if (Keyboard::isKeyPressed(der)) {
-        nave.move(desplazamiento, 0);
-    }
-    if (Keyboard::isKeyPressed(izq)) {
-        nave.move(-desplazamiento, 0);
-    }
-    if (Keyboard::isKeyPressed(acel)) {
-        nave.move(0, -desplazamiento);
-        actualizarAvance(true);
-    } else {
-        actualizarAvance(false);
-    }
-    if (Keyboard::isKeyPressed(retro)) {
-        nave.move(0, desplazamiento);
-    }
-    fire.setPosition(nave.getPosition().x, nave.getPosition().y + 47);
-}
-void Nave::cambiarPos(float desplazamiento) {
-    Vector2f pos = nave.getPosition();
-
-    if (Keyboard::isKeyPressed(der)) {
-        pos.x += desplazamiento;
-    }
-    if (Keyboard::isKeyPressed(izq)) {
-        pos.x -= desplazamiento;
-    }
-    if (Keyboard::isKeyPressed(acel)) {
-        pos.y -= desplazamiento;
-    }
-    if (Keyboard::isKeyPressed(retro)) {
-        pos.y += desplazamiento;
-    }
-
-    nave.setPosition(pos.x, pos.y);
-
-}
-Vector2f  Nave::verPos() {return nave.getPosition();}
+Vector2f  Nave::verPos() {return nave.verPosition();}
 bool Nave::estaQuieto() {
-    return !(Keyboard::isKeyPressed(der) ||
-        Keyboard::isKeyPressed(izq) ||
-        Keyboard::isKeyPressed(acel) ||
-        Keyboard::isKeyPressed(retro));
+    return !(Keyboard::isKeyPressed(salto));
 }
 void Nave::verificarLimitesPantalla() {
-    FloatRect bounds = nave.getGlobalBounds();
-
-    if (nave.getPosition().x - bounds.width / 2 < 0) {
-        nave.setPosition(bounds.width / 2, nave.getPosition().y);
+    FloatRect bounds = nave.verGlobalBounds();
+    //aca la pantalla es de 128x256
+    if (nave.verPosition().x - bounds.width / 2 < 0) {
+        nave.quePosition(bounds.width / 2, nave.verPosition().y);
     }
-    if (nave.getPosition().x + bounds.width / 2 > 1280) {
-        nave.setPosition(1280 - bounds.width / 2, nave.getPosition().y);
-    }
-    if (nave.getPosition().y - bounds.height / 2 < 0) {
-        nave.setPosition(nave.getPosition().x, bounds.height / 2);
-    }
-    if (nave.getPosition().y + bounds.height / 2 > 720) {
-        nave.setPosition(nave.getPosition().x, 720 - bounds.height / 2);
-    }
-}
-
-
-void Nave::actualizarAvance(bool avanzando) {
-    if (avanzando) {
-        fire.Play("fire2");
-    }else {
-        fire.Play("fire1");
-    }
-}
-void Nave::esVisible(bool visible) {
-    if (visible) {
-
-        nave.setColor(Color(255, 255, 255, 255));
-        fire.setColor(Color(255, 255, 255, 255));
-    }
-    else {
-        nave.setColor(Color(255, 255, 255, 0));
-        fire.setColor(Color(255, 255, 255, 0));
+    if (nave.verPosition().x + bounds.width / 2 > 128) {
+        nave.quePosition(128 - bounds.width / 2, nave.verPosition().y);
     }
 }
 
 void Nave::actualizar(float deltaTime) {
-    if (!enDestruccion) {
-        if (invulnerable && relojInvulnerabilidad.verTiempoTranscurrido() > duracionInvulnerabilidad) {
-            invulnerable = false;
-        }
-        verificarLimitesPantalla();
-        nave.Update();
-        fire.Update();
-        if (nave.IsFinished("shot")) {
-            if (dobleDisparoActivo)
-                nave.Play("double-idle");
-        }
-        mover(deltaTime);
-    }
-    else {
-        nave.Update(); // animación de destrucción
-        if (nave.IsFinished("destroyed") || nave.IsFinished("double-destroyed")) {
+    if (enDestruccion) {
+        destruccion.Update();
+        if (destruccion.IsFinished("destruccion")) {
             resistencia = 0;
         }
+        return;
     }
+
+    if (esperando) {
+        return;
+    }
+
+    velY += gravedad * deltaTime; // v = v0 + a*t
+    nave.mover(0, velY * deltaTime); // y = y0 + v*t
+
+    propulsor.setPosition(nave.verPosition().x, nave.verPosition().y + 9);
+    propulsor.Update();
+
+    if (!saltando) {
+        float distanciaCaida = nave.verPosition().y - alturaInicioCaida;
+        if (distanciaCaida > limiteCaida) {
+            iniciarDestruccion();
+        }
+    }
+
+    verificarLimitesPantalla();
 }
 void Nave::manejarEventos(Event& e) {
-    if (e.type == Event::KeyPressed && e.key.code == dis && puedeDisparar) {
-        disparar();
-        puedeDisparar = false;
+    if (e.type == Event::KeyPressed && e.key.code == salto) {
+        if (esperando) esperando = false;
+        velY = fuerzaSalto; // impulso inicial hacia arriba
+        saltando = true;
+        propulsor.Play("propulsor1");
     }
-    if (e.type == Event::KeyReleased && e.key.code == dis) {
-        puedeDisparar = true;
-    }
-    if (e.type == Event::KeyPressed && e.key.code == habi && habilidad->estaRecargada()) {
-        habilidadNave();
+    if (e.type == Event::KeyReleased && e.key.code == Keyboard::Space) {
+        saltando = false;
+        alturaInicioCaida = nave.verPosition().y; // guardamos altura desde donde cae
     }
 }
-void Nave::dibujar(RenderWindow& w) {
-    w.draw(nave);
-    w.draw(fire);
-    habilidad->dibujar(w);
-    dibujarHitbox(w);
+void Nave::dibujar(RenderTarget& w) {
+    nave.dibujar(w);
+    if(saltando)w.draw(propulsor);
+    //dibujarHitbox(w);
 }
 
 void Nave::iniciarDestruccion() {
     if (!enDestruccion) {
         enDestruccion = true;
-        if (dobleDisparoActivo) {
-            nave.Play("double-destroyed");
-        }
-        else {
-
-            nave.Play("destroyed");
-        }
+        destruccion.Play("destruccion");
     }
 }
 bool Nave::estaEnDestruccion() {return enDestruccion;}
-bool Nave::estaMuerto() {return resistencia <= 0 && (nave.IsFinished("destroyed") || nave.IsFinished("double-destroyed"));}
+bool Nave::estaMuerto() {return resistencia <= 0 && destruccion.IsFinished("destruccion");}
 
-void Nave::aumentarPuntos(int canPuntos) {puntos += canPuntos;}
-int Nave::verPuntos(){return puntos;}
 
 void Nave::pausar() {
     relojInvulnerabilidad.pausar();
-    habilidad->pausar();
 }
 void Nave::reanudar() {
     relojInvulnerabilidad.reanudar();
-    habilidad->reanudar();
 }
 
 void Nave::configurarHitboxCircular(float radio, float offsetY) {
@@ -270,7 +139,6 @@ bool Nave::colisionaCon(const FloatRect& otro) {
         Vector2f centro = verPos();
         centro.y += offsetYHitboxCircular;
 
-        // Usar clamp para encontrar el punto más cercano del rectángulo al centro del círculo
         float closestX = clamp(centro.x, otro.left, otro.left + otro.width);
         float closestY = clamp(centro.y, otro.top, otro.top + otro.height);
 
@@ -287,7 +155,7 @@ bool Nave::colisionaCon(const FloatRect& otro) {
 }
 void Nave::dibujarHitbox(RenderWindow& w) {
     if (usarHitboxCircular) {
-        Vector2f centro = nave.getPosition();
+        Vector2f centro = nave.verPosition();
         centro.y += offsetYHitboxCircular;
 
         CircleShape circuloHitbox(radioHitbox);
@@ -299,7 +167,7 @@ void Nave::dibujarHitbox(RenderWindow& w) {
         w.draw(circuloHitbox);
     }
     else {
-        Vector2f pos = nave.getPosition();
+        Vector2f pos = nave.verPosition();
 
         FloatRect parteCentral(pos.x - tam_central.x / 2, pos.y - tam_central.y / 2, tam_central.x, tam_central.y);
         FloatRect parteSuperior(pos.x - tam_superior.x / 2, pos.y - tam_central.y / 2 + offsetYSuperior, tam_superior.x, tam_superior.y);

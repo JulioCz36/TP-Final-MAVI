@@ -5,7 +5,7 @@ Item::Item(const string& texturePath) : textura(texturePath) {
     item.quePosition(rand() % 1240, -40);
 }
 
-void Item::dibujar(RenderWindow& window) {
+void Item::dibujar(RenderTarget& window) {
     item.dibujar(window);
 }
 void Item::actualizar(float deltaTime) {

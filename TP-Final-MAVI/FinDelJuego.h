@@ -23,12 +23,11 @@ class FinDelJuego : public Escena, public Menu {
 
 
 public:
-	FinDelJuego(RenderWindow& v,int enemigos,int puntos);
+	FinDelJuego(RenderWindow& v, int kilometros);
 	void procesoEventos(Juego& j, Event& event) override;
 	void actualizar(Juego& j) override;
-	void dibujar(RenderWindow& w)override;
+	void dibujar(RenderTarget& w)override;
 
-    void ejecutarAccion(Juego& j, Opciones accion) override;
 	void actualizarDigitos(vector<Afichmation>& destino, int valor, int posXFin, int posY);
 };
 

@@ -7,7 +7,7 @@ Asteroide::Asteroide(const string& texture, int anchura, int altura,float speedM
 	asteroide.setPosition(rand() % (1280 - anchura), -altura / 2.f);
 }
 
-void Asteroide::dibujar(RenderWindow& window) {window.draw(asteroide);}
+void Asteroide::dibujar(RenderTarget& window) {window.draw(asteroide);}
 void Asteroide::actualizar(float deltaTime) {
 	asteroide.Update();
 	if (!enDestruccion) {

@@ -15,7 +15,7 @@ public:
 
     virtual void aplicarEfecto(Nave& nave) = 0;
 
-    void dibujar(RenderWindow& window);
+    void dibujar(RenderTarget& window);
     void actualizar(float deltaTime);
 
     virtual bool mostrarEnHUD();
