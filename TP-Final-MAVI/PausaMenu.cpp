@@ -1,7 +1,7 @@
 #include "PausaMenu.h"
 
 PausaMenu::PausaMenu(RenderWindow& v) : Menu(v) {
-    crearBoton("assets/UI/continuar_ui.png", Opciones::Comenzar, 12, 13, 3.f, 40 , 129);
+    crearBoton("assets/UI/continuar_ui.png", Opciones::Continuar, 12, 13, 3.f, 40 , 129);
     crearBoton("assets/UI/reiniciar_ui.png", Opciones::Reiniciar, 12, 13, 3.f, 90, 129);
     crearBoton("assets/UI/ajustes_ui.png", Opciones::Ajustes, 12, 13, 3.f, 40, 180);
     crearBoton("assets/UI/casa_ui.png", Opciones::VolverAlMenu, 12, 13, 3.f, 90, 180);

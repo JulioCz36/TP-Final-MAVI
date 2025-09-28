@@ -18,9 +18,6 @@ public:
     void dibujar(RenderTarget& window);
     void actualizar(float deltaTime);
 
-    virtual bool mostrarEnHUD();
-    string verItem() const;
-
     FloatRect verBounds();
     bool fueraDePantalla() ;
 };

@@ -25,7 +25,7 @@ class Partida : public Escena {
 	View camera;
 
 	// === FONDO EN MOVIMIENTO ===
-	Figura fondo1, fondo2;
+	Figura fondo1, fondo2, fondoAdelante1,fondoAdelante2;
 	float fondoVelocidad = 100.f;
 	Reloj relojDeltaTime;
 
@@ -52,7 +52,7 @@ class Partida : public Escena {
 	bool pausado = false;
 
 	// === Manejo de Fondo ===
-	void actualizarFondo(float deltaTime);
+	void actualizarFondo();
 
 
 	// === Interaccion entre Objetos ===

@@ -36,7 +36,6 @@ public:
 
 	void reanudar();
 
-	void marcarParaReiniciar();
 	void reiniciar();
 	void volverAlMenu();
 	void  salir();

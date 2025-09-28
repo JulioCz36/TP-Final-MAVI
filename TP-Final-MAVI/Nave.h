@@ -18,6 +18,9 @@ class Nave {
 	Figura nave;
 	Afichmation destruccion;
 	Afichmation propulsor;
+	Afichmation escudo;
+
+	int vidaActual, vidaMaxima;
 
 	// Movimiento vertical
 	float velY = 0.f;
@@ -27,54 +30,36 @@ class Nave {
 	
 	bool saltando = false;
 	float alturaInicioCaida = 0.f;
-	float limiteCaida = 100.f;   // “metros” antes de morir
+	float limiteCaida = 500.f;   // “metros” antes de morir
 
-	bool enDestruccion = false;
-	float tiempoDestruccion = 0.3f;
-	int repeticionesDestruccion = 0;
-
-	// Variables de control y movimiento
+	// Variables de control 
 	Keyboard::Key salto = Keyboard::Space;
 
-	int resistencia, resistenciaMaxima;
+	// Variables destrucción
+	bool enDestruccion = false;
+
+	// ----------------- Escudo -----------------
+	bool escudoActivo = false;
+	bool escudoDesactivandose = false;
+	float duracionEscudo = 0.f;     
+	Reloj relojEscudo;
 
 	// Variables invulnerabilidad
 	bool invulnerable = false;
-	float duracionInvulnerabilidad = 0;
-	Reloj relojInvulnerabilidad;
 
-	// Contenedores de elementos
-
-	bool enPausa = false;
-
+	// Variables de control de Hurtbox y Hitbox
 	Vector2f tam_central = { 0, 0 };
 	Vector2f tam_superior = { 0, 0 };
 	float offsetYSuperior = 0.f;
 
 	float radioHitbox = 0.f;
-	float offsetYHitboxCircular = 0.f;
 	bool usarHitboxCircular = false;
+
+	bool enPausa = false;
 
 
 public:
-	Nave(float x, float y, float vel, int resi);
-
-	// ----------------- Vida e invulnerabilidad -----------------
-
-	void recibirDano(float dano);
-	float verVida();
-	void aumentarVida(int canVida);
-	bool esInvulnerable();
-	void activarInvulnerabilidad(float segundos);
-
-	// ----------------- Movimiento -----------------
-	Vector2f verPos();
-	bool estaQuieto();
-
-
-	bool colisionaCon(const FloatRect& otro);
-	void dibujarHitbox(RenderWindow& w);
-	void verificarLimitesPantalla();
+	Nave(float x, float y, float vel, int vida);
 
 	// -----------------  MÉTODOS PRINCIPALES -----------------
 
@@ -82,21 +67,29 @@ public:
 	void manejarEventos(Event& e);
 	void dibujar(RenderTarget& w);
 
-	// ----------------- Estado y destrucción -----------------
+	// ----------------- Vida e invulnerabilidad -----------------
+
+	void recibirDano(float dano);
+	float verVida();
+	void aumentarVida(int canVida);
+	bool esInvulnerable();
+
+	// ----------------- destrucción -----------------
 
 	void iniciarDestruccion();
 	bool estaEnDestruccion();
 	bool estaMuerto();
 
+	void activarEscudo(float segundos);
+
+	bool colisionaCon(const FloatRect& otro);
+	void dibujarBox(RenderTarget& w);
 
 	void pausar();
 	void reanudar();
 
-	void configurarHitboxCircular(float radio, float offsetY);
-
-	void hitboxCircular(bool activar);
-
 	void setPartida(Partida* p);
 
+	Vector2f verPos();
 };
 

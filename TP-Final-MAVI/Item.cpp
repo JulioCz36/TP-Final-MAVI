@@ -9,11 +9,8 @@ void Item::dibujar(RenderTarget& window) {
     item.dibujar(window);
 }
 void Item::actualizar(float deltaTime) {
-    item.mover(0, 100.f * deltaTime);
+    
 }
-
-bool Item::mostrarEnHUD(){ return true; }
-string Item::verItem() const {return textura;}
 
 FloatRect Item::verBounds() { return item.verGlobalBounds(); }
 bool Item::fueraDePantalla() {

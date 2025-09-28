@@ -1,12 +1,16 @@
 ﻿#include "Partida.h"
 
-Partida::Partida(RenderWindow& v, Nave* player) :jugador(player), pausa(v), HUD(3){
+Partida::Partida(RenderWindow& v, Nave* player) :jugador(player), pausa(v), HUD(jugador->verVida()){
 
 	fondo1.cargarImagen("assets/Fondo/fondo.png");
 	fondo2.cargarImagen("assets/Fondo/fondo.png");
-
 	fondo1.quePosition(128 / 2, 256 / 2);
 	fondo2.quePosition(128 / 2, fondo1.verPosition().y - fondo1.verGlobalBounds().height);
+
+	fondoAdelante1.cargarImagen("assets/Fondo/fondo_arriba.png");
+	fondoAdelante2.cargarImagen("assets/Fondo/fondo_arriba.png");
+	fondoAdelante1.quePosition(128 / 2, 256 / 2);
+	fondoAdelante2.quePosition(128 / 2, fondo1.verPosition().y - fondo1.verGlobalBounds().height);
 
 	relojGeneracion.reiniciar();
 
@@ -18,7 +22,7 @@ Partida::Partida(RenderWindow& v, Nave* player) :jugador(player), pausa(v), HUD(
 	sonidoPartNormal->cargar("assets/sonidos/sonido_batalla_normal.wav");
 	sonidoPartNormal->queVolumen(25);
 
-	camera.reset(sf::FloatRect(0, 0, 128, 256));
+	camera.reset(FloatRect(0, 0, 128, 256));
 }
 
 void Partida::actualizar(Juego& j) {
@@ -30,7 +34,7 @@ void Partida::actualizar(Juego& j) {
 		}
 		deltaTime = relojDeltaTime.verReinicio();
 
-		actualizarFondo(deltaTime);
+		actualizarFondo();
 
 		if (jugador->estaMuerto()) {
 			sonidoPartNormal->stop();
@@ -40,14 +44,20 @@ void Partida::actualizar(Juego& j) {
 
 		//generarItems();
 		//egenerarAsteroides();
-
-		asteroideYNave(deltaTime);
-		itemYNave(deltaTime);
+ 
+		//asteroideYNave(deltaTime);
+		//itemYNave(deltaTime);
 
 		jugador->actualizar(deltaTime);
-		camera.setCenter(jugador->verPos());
 
-		HUD.actualizar(3, 20);
+		Vector2f center = camera.getCenter();
+		
+		if (jugador->verPos().y < 256.f / 2.f) {
+			center.y = jugador->verPos().y;
+			camera.setCenter(center);
+		}
+
+		HUD.actualizar(jugador->verVida(), 20);
 
 	}else {
 		if (sonidoPartNormal->estaReproduciendo()) {
@@ -59,13 +69,10 @@ void Partida::actualizar(Juego& j) {
 
 }
 void Partida::dibujar(RenderTarget& window) {
-	RenderWindow* rw = dynamic_cast<RenderWindow*>(&window);
-	rw->setView(rw->getDefaultView());
+	window.setView(camera);
 
 	fondo1.dibujar(window);
 	fondo2.dibujar(window);
-
-	rw->setView(camera);
 
 	jugador->dibujar(window);
 
@@ -76,7 +83,10 @@ void Partida::dibujar(RenderTarget& window) {
 		(*it)->dibujar(window);
 	}
 
-	rw->setView(rw->getDefaultView());
+	fondoAdelante1.dibujar(window);
+	fondoAdelante2.dibujar(window);
+
+	window.setView(window.getDefaultView());
 	HUD.dibujar(window);
 
 	if (pausado) {
@@ -117,20 +127,31 @@ void Partida::pausar() {
 	jugador->pausar();
 }
 
-void Partida::actualizarFondo(float deltaTime) {
+void Partida::actualizarFondo() {
 	float altura = fondo1.verGlobalBounds().height;
 
-	fondo1.mover(0, fondoVelocidad * deltaTime);
-	fondo2.mover(0, fondoVelocidad * deltaTime);
+	float camY = camera.getCenter().y; 
+	float mitadAlturaVista = camera.getSize().y / 2.f;
 
-	float borde1 = fondo1.verPosition().y + altura / 2.f;
-	float borde2 = fondo2.verPosition().y + altura / 2.f;
-
-	if (borde1 >= 256 * 2) {
+	// Aca lo que hago es ir moviendo los fondos hacia arriba
+	if (fondo1.verPosition().y - altura / 2.f > camY + mitadAlturaVista) {
 		fondo1.quePosition(fondo1.verPosition().x, fondo2.verPosition().y - altura);
+		fondoAdelante1.quePosition(fondo1.verPosition().x, fondo2.verPosition().y - altura);
 	}
-	if (borde2 >= 256 * 2) {
+	if (fondo2.verPosition().y - altura / 2.f > camY + mitadAlturaVista) {
 		fondo2.quePosition(fondo2.verPosition().x, fondo1.verPosition().y - altura);
+		fondoAdelante2.quePosition(fondo2.verPosition().x, fondo1.verPosition().y - altura);
+	}
+
+	// Aca lo que hago es ir moviendo los fondos hacia abajo
+	if (fondo1.verPosition().y + altura / 2.f < camY - mitadAlturaVista) {
+		fondo1.quePosition(fondo1.verPosition().x, fondo2.verPosition().y + altura);
+		fondoAdelante1.quePosition(fondo1.verPosition().x, fondo2.verPosition().y + altura);
+	}
+
+	if (fondo2.verPosition().y + altura / 2.f < camY - mitadAlturaVista) {
+		fondo2.quePosition(fondo2.verPosition().x, fondo1.verPosition().y + altura);
+		fondoAdelante2.quePosition(fondo2.verPosition().x, fondo1.verPosition().y + altura);
 	}
 }
 

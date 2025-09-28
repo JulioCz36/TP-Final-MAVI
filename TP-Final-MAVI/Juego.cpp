@@ -105,9 +105,6 @@ void Juego::reanudar() {
 		partida->reanudar();
 	}
 }
-void Juego::marcarParaReiniciar() {
-	debeReiniciar = true;
-}
 void Juego::reiniciar() {
 	if (auto partida = dynamic_cast<Partida*>(actual)) {
 		partida->detenerSonido();

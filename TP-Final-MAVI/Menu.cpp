@@ -132,9 +132,11 @@ void Menu::ejecutarAccion(Juego& j, Opciones accion) {
     case Opciones::SalirDelJuego:
         j.salir();
         break;
-    case Opciones::Reiniciar:
-        j.marcarParaReiniciar();
+    case Opciones::Continuar:
         j.reanudar();
+        break;
+    case Opciones::Reiniciar:
+        j.reiniciar();
         break;
     case Opciones::VolverAlMenu:
         j.volverAlMenu();

@@ -1,0 +1,97 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Partida.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|solutionrelative:TP-Final-MAVI\\Partida.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Partida.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|solutionrelative:TP-Final-MAVI\\Partida.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Nave.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|solutionrelative:TP-Final-MAVI\\Nave.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Nave.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|solutionrelative:TP-Final-MAVI\\Nave.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Partida.h",
+              "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Partida.h",
+              "RelativeDocumentMoniker": "TP-Final-MAVI\\Partida.h",
+              "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Partida.h",
+              "RelativeToolTip": "TP-Final-MAVI\\Partida.h",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-27T22:14:23.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Nave.h",
+              "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Nave.h",
+              "RelativeDocumentMoniker": "TP-Final-MAVI\\Nave.h",
+              "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Nave.h",
+              "RelativeToolTip": "TP-Final-MAVI\\Nave.h",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAD0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-27T15:07:55.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Nave.cpp",
+              "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Nave.cpp",
+              "RelativeDocumentMoniker": "TP-Final-MAVI\\Nave.cpp",
+              "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Nave.cpp",
+              "RelativeToolTip": "TP-Final-MAVI\\Nave.cpp",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAJQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-27T15:06:25.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Partida.cpp",
+              "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Partida.cpp",
+              "RelativeDocumentMoniker": "TP-Final-MAVI\\Partida.cpp",
+              "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Partida.cpp",
+              "RelativeToolTip": "TP-Final-MAVI\\Partida.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-27T14:33:21.377Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
