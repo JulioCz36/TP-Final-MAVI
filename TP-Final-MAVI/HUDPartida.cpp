@@ -1,9 +1,8 @@
 #include "HUDPartida.h"
-HUDPartida::HUDPartida(int vidaMax_) : digito("assets/hud/numeros_sheet.png", true, 19, 19), vidaMax(vidaMax_) {
-    for (int i = 0; i < 11; ++i) {
+HUDPartida::HUDPartida(int vidaMax_) : digito("assets/UI/numeros.png", true, 7, 12), vidaMax(vidaMax_) {
+    for (int i = 0; i < 10; ++i) {
         digito.Add(to_string(i), { i }, 1, true);
     }
-    digito.setScale(1.5, 1.5);
 
     //Vida
     icon_vidas.resize(vidaMax);
@@ -15,14 +14,14 @@ HUDPartida::HUDPartida(int vidaMax_) : digito("assets/hud/numeros_sheet.png", tr
 }
 
 void HUDPartida::actualizar(int vida_t, int kilometros_t) {
-    actualizarDigitos(kilometros, kilometros_t, 1250, 30, false);
+    actualizarDigitos(metros, kilometros_t, 113, 15);
 
     for (int i = 0; i < vidaMax; i++) {
         icon_vidas[i].esVisible(i < vida_t);
     }
 }
 void HUDPartida::dibujar(RenderTarget& window) {
-    for (auto& k : kilometros) {
+    for (auto& k : metros) {
         window.draw(k);
     }
 
@@ -31,23 +30,18 @@ void HUDPartida::dibujar(RenderTarget& window) {
     }
 }
 
-void HUDPartida::actualizarDigitos(vector<Afichmation>& destino, int valor, int posXFin, int posY, bool izquierdaADerecha) {
+void HUDPartida::actualizarDigitos(vector<Afichmation>& destino, int valor, int posXFin, int posY) {
     destino.clear();
     string str = to_string(valor);
-    float ancho = 19.f * digito.getScale().x;
+
+    float espaciado = 8.f * digito.getScale().x;
 
     for (size_t i = 0; i < str.size(); ++i) {
         string nombre(1, str[i]);
         Afichmation nuevoDigito = digito;
         nuevoDigito.Play(nombre);
 
-        int posX;
-        if (izquierdaADerecha) {
-            posX = posXFin + i * ancho;
-        }
-        else {
-            posX = posXFin + (-ancho) * (str.size() - 1 - i);
-        }
+        int posX = posXFin - (str.size() - 1 - i) * espaciado;
 
         nuevoDigito.setPosition(posX, posY);
         nuevoDigito.Update();

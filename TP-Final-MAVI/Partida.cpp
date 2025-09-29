@@ -2,6 +2,8 @@
 
 Partida::Partida(RenderWindow& v, Nave* player) :jugador(player), pausa(v), HUD(jugador->verVida()){
 
+	alturaReferencia = jugador->verPos().y;
+
 	fondo1.cargarImagen("assets/Fondo/fondo.png");
 	fondo2.cargarImagen("assets/Fondo/fondo.png");
 	fondo1.quePosition(128 / 2, 256 / 2);
@@ -36,9 +38,9 @@ void Partida::actualizar(Juego& j) {
 
 		if (jugador->estaEnDestruccion()) {
 			sonidoPartNormal->stop();
-			//j.finDelJuego(jugador->verPuntos());
+			//musica derrota->play();
 		}if (jugador->estaMuerto()) {
-			//j.finDelJuego(jugador->verPuntos());
+			j.finDelJuego(static_cast<int>(alturaActual));
 		}
 
 		generarItems();
@@ -47,6 +49,7 @@ void Partida::actualizar(Juego& j) {
  
 		//asteroideYNave(deltaTime);
 
+		alturaActual = alturaReferencia - jugador->verPos().y;
 		jugador->actualizar(deltaTime);
 
 		Vector2f center = camera.getCenter();
@@ -56,7 +59,7 @@ void Partida::actualizar(Juego& j) {
 			camera.setCenter(center);
 		}
 
-		HUD.actualizar(jugador->verVida(), 20);
+		HUD.actualizar(jugador->verVida(), static_cast<int>(alturaActual));
 
 	}else {
 		if (sonidoPartNormal->estaReproduciendo()) {

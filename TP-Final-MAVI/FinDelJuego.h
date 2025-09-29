@@ -10,14 +10,12 @@ using namespace std;
 
 class FinDelJuego : public Escena, public Menu {
 	Afichmation digito;
-	vector<Afichmation> enemigo;
-	vector<Afichmation>punto;
-	vector<Afichmation>puntosFinales;
+	vector<Afichmation>metros;
 
     Figura cartel;
 
-	int contadorActual = 2;
-	int puntosFinalesObjetivo = 0;
+	int contadorActual = 0;
+	int metrosFinales;
 	Reloj relojConteo;
 	float intervaloConteo = 0.05f;
 

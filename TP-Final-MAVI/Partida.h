@@ -42,13 +42,11 @@ class Partida : public Escena {
 	// === ÍTEMS,Y JUGADOR ===
 	vector<unique_ptr<Item>> items;
 	Reloj relojItem;
-	Reloj relojCooldownPropulsor;
-	Reloj relojCooldownEscudo;
-	bool propulsorBloqueado = false;
-	bool escudoBloqueado = false;
 
 	// ===JUGADOR ===
 	Nave* jugador;
+	float alturaReferencia;
+	float alturaActual = 0.f;
 
 	// === INTERFAZ DE USUARIO ===
 	HUDPartida HUD;

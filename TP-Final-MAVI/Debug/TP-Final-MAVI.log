@@ -1,18 +1,16 @@
-﻿  Partida.cpp
+﻿  FinDelJuego.cpp
 C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
-  (compilando archivo de origen "Partida.cpp")
+  (compilando archivo de origen "FinDelJuego.cpp")
   
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Partida.cpp(3,97): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Partida.cpp(57,34): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:         with
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:             _Ty=int
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:         ]
-  (compilando archivo de origen "Partida.cpp")
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56):
-      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
-          C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Partida.cpp(184,25):
-          Vea la referencia a la creación de una instancia de la función plantilla "std::unique_ptr<Asteroide,std::default_delete<Asteroide>> std::make_unique<Asteroide,const char(&)[52],int,int,int,int,int,0>(const char (&)[52],int &&,int &&,int &&,int &&,int &&)" que se está compilando
-  
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,100): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,100): warning C4244:         with
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,100): warning C4244:         [
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,100): warning C4244:             T=float
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,100): warning C4244:         ]
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,70): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,70): warning C4244:         with
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,70): warning C4244:         [
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,70): warning C4244:             T=float
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,70): warning C4244:         ]
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(52,39): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   TP-Final-MAVI.vcxproj -> C:\Users\julio\Documents\GitHub\TP-Final-MAVI\Debug\TP-Final-MAVI.exe

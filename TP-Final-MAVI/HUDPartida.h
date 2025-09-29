@@ -7,18 +7,18 @@ using namespace std;
 
 class HUDPartida{
     Afichmation digito;
-    vector<Afichmation> kilometros;
+    vector<Afichmation> metros;
 
     vector<Figura> icon_vidas;
     int vidaMax;
 
-    void actualizarDigitos(vector<Afichmation>& destino, int valor, int posXInicio, int posY, bool izquierdaADerecha);
+    void actualizarDigitos(vector<Afichmation>& destino, int valor, int posXFin, int posY);
 
 public:
     HUDPartida(int vidaMax);
 
     // ===  MÉTODOS PRINCIPALES ===
-    void actualizar(int vida_t, int puntos_t);
+    void actualizar(int vida_t, int metros_t);
     void dibujar(RenderTarget& window);
 
 };
