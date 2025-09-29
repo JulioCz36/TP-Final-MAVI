@@ -6,7 +6,7 @@ using namespace std;
 
 class ItemVida : public Item {
 public:
-	ItemVida();
+	ItemVida(const Vector2f& pos);
 	void aplicarEfecto(Nave& nave) override;
 };
 

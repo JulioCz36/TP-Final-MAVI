@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\ItemVida.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|solutionrelative:TP-Final-MAVI\\ItemVida.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|solutionrelative:TP-Final-MAVI\\Item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\ItemVida.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|solutionrelative:TP-Final-MAVI\\ItemVida.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|solutionrelative:TP-Final-MAVI\\Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Nave.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|solutionrelative:TP-Final-MAVI\\Nave.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Partida.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|solutionrelative:TP-Final-MAVI\\Partida.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Partida.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|solutionrelative:TP-Final-MAVI\\Partida.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Nave.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|solutionrelative:TP-Final-MAVI\\Nave.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Juego.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|solutionrelative:TP-Final-MAVI\\Juego.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\ItemPropulsor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|solutionrelative:TP-Final-MAVI\\ItemPropulsor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\ItemPropulsor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B6519AD0-087E-4C52-A009-0E09EE06549C}|TP-Final-MAVI\\TP-Final-MAVI.vcxproj|solutionrelative:TP-Final-MAVI\\ItemPropulsor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,47 +38,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ItemVida.cpp",
-              "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\ItemVida.cpp",
-              "RelativeDocumentMoniker": "TP-Final-MAVI\\ItemVida.cpp",
-              "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\ItemVida.cpp",
-              "RelativeToolTip": "TP-Final-MAVI\\ItemVida.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-09-28T04:14:09.146Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ItemVida.h",
-              "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\ItemVida.h",
-              "RelativeDocumentMoniker": "TP-Final-MAVI\\ItemVida.h",
-              "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\ItemVida.h",
-              "RelativeToolTip": "TP-Final-MAVI\\ItemVida.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-28T04:13:48.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Item.cpp",
-              "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Item.cpp",
-              "RelativeDocumentMoniker": "TP-Final-MAVI\\Item.cpp",
-              "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Item.cpp",
-              "RelativeToolTip": "TP-Final-MAVI\\Item.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-09-28T04:08:51.6Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -85,26 +54,91 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Item.h",
-              "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Item.h",
-              "RelativeDocumentMoniker": "TP-Final-MAVI\\Item.h",
-              "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Item.h",
-              "RelativeToolTip": "TP-Final-MAVI\\Item.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-28T04:09:13.866Z",
+              "DocumentIndex": 4,
+              "Title": "Juego.cpp",
+              "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Juego.cpp",
+              "RelativeDocumentMoniker": "TP-Final-MAVI\\Juego.cpp",
+              "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Juego.cpp",
+              "RelativeToolTip": "TP-Final-MAVI\\Juego.cpp",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-29T14:20:42.766Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
+              "Title": "ItemPropulsor.cpp",
+              "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\ItemPropulsor.cpp",
+              "RelativeDocumentMoniker": "TP-Final-MAVI\\ItemPropulsor.cpp",
+              "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\ItemPropulsor.cpp",
+              "RelativeToolTip": "TP-Final-MAVI\\ItemPropulsor.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-29T14:05:36.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ItemPropulsor.h",
+              "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\ItemPropulsor.h",
+              "RelativeDocumentMoniker": "TP-Final-MAVI\\ItemPropulsor.h",
+              "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\ItemPropulsor.h",
+              "RelativeToolTip": "TP-Final-MAVI\\ItemPropulsor.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-29T14:04:57.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Nave.h",
+              "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Nave.h",
+              "RelativeDocumentMoniker": "TP-Final-MAVI\\Nave.h",
+              "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Nave.h",
+              "RelativeToolTip": "TP-Final-MAVI\\Nave.h",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAGIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-29T13:31:29.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Nave.cpp",
+              "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Nave.cpp",
+              "RelativeDocumentMoniker": "TP-Final-MAVI\\Nave.cpp",
+              "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Nave.cpp",
+              "RelativeToolTip": "TP-Final-MAVI\\Nave.cpp",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAAAJ0AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-28T22:41:15.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Partida.h",
+              "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Partida.h",
+              "RelativeDocumentMoniker": "TP-Final-MAVI\\Partida.h",
+              "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Partida.h",
+              "RelativeToolTip": "TP-Final-MAVI\\Partida.h",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAC8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-28T22:29:55.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Partida.cpp",
               "DocumentMoniker": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Partida.cpp",
               "RelativeDocumentMoniker": "TP-Final-MAVI\\Partida.cpp",
               "ToolTip": "C:\\Users\\julio\\Documents\\GitHub\\TP-Final-MAVI\\TP-Final-MAVI\\Partida.cpp",
               "RelativeToolTip": "TP-Final-MAVI\\Partida.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-27T14:33:21.377Z",
               "EditorCaption": ""

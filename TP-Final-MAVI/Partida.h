@@ -7,6 +7,8 @@
 
 #include "Item.h"
 #include "ItemVida.h"
+#include "ItemEscudo.h"
+#include "ItemPropulsor.h"
 
 #include "HUDPartida.h"
 #include "Asteroide.h"
@@ -29,7 +31,7 @@ class Partida : public Escena {
 	float fondoVelocidad = 100.f;
 	Reloj relojDeltaTime;
 
-	shared_ptr<Audio>sonidoItem, sonidoPartNormal;
+	shared_ptr<Audio> sonidoPartNormal;
 
 
 	// === Asteroide ===
@@ -40,7 +42,10 @@ class Partida : public Escena {
 	// === ÍTEMS,Y JUGADOR ===
 	vector<unique_ptr<Item>> items;
 	Reloj relojItem;
-	String ultimo_item;
+	Reloj relojCooldownPropulsor;
+	Reloj relojCooldownEscudo;
+	bool propulsorBloqueado = false;
+	bool escudoBloqueado = false;
 
 	// ===JUGADOR ===
 	Nave* jugador;

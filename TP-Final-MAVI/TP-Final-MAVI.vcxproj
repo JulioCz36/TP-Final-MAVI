@@ -144,6 +144,8 @@
     <ClCompile Include="FinDelJuego.cpp" />
     <ClCompile Include="HUDPartida.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemEscudo.cpp" />
+    <ClCompile Include="ItemPropulsor.cpp" />
     <ClCompile Include="ItemVida.cpp" />
     <ClCompile Include="Juego.cpp" />
     <ClCompile Include="main.cpp" />
@@ -164,6 +166,8 @@
     <ClInclude Include="FinDelJuego.h" />
     <ClInclude Include="HUDPartida.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemEscudo.h" />
+    <ClInclude Include="ItemPropulsor.h" />
     <ClInclude Include="ItemVida.h" />
     <ClInclude Include="Juego.h" />
     <ClInclude Include="Menu.h" />

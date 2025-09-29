@@ -28,17 +28,18 @@ propulsor("assets/Jugador/propulsor.png",true,8,8), escudo("assets/Jugador/escud
 
     //hibox para el escudo
     radioHitbox = 16;
-
-    activarEscudo(10);
 }
 
 void Nave::recibirDano(float dano) {
-    vidaActual -= dano;
+    if (!invulnerable) vidaActual -= dano;
+
     if (vidaActual <= 0) {
+        vidaActual = 0;
         iniciarDestruccion();
     }
 }
 float Nave::verVida(){return vidaActual;}
+float Nave::verVidaMax() { return vidaMaxima; }
 void Nave::aumentarVida(int canVida) {
     if (vidaActual < vidaMaxima) {
         vidaActual += canVida;
@@ -47,22 +48,35 @@ void Nave::aumentarVida(int canVida) {
         }
     }
 }
-bool Nave::esInvulnerable() {return invulnerable;}
 
 Vector2f  Nave::verPos() {return nave.verPosition();}
 
 void Nave::actualizar(float deltaTime) {
     if (enDestruccion) {
         destruccion.Update();
-        if (destruccion.IsFinished("destruccion")) {
-            vidaActual = 0;
-        }
         return;
     }
 
-    if (esperando) {
-        return;
+    if (esperando) return;
+
+    if (propulsorActivo) {
+        if (!propulsor.IsPlaying("propulsor2")) {
+            propulsor.Play("propulsor2");
+        }
+        nave.mover(0, velY * deltaTime);
+
+        if (relojPropulsor.verTiempoTranscurrido() >= duracionPropulsor) {
+            invulnerable = false;
+            propulsorActivo = false;
+        }
     }
+    else {
+        velY += gravedad * deltaTime; // v = v0 + a*t
+        nave.mover(0, velY * deltaTime); // y = y0 + v*t
+    }
+
+    propulsor.setPosition(nave.verPosition().x, nave.verPosition().y + 9);
+    propulsor.Update();
 
     if (escudoActivo) {
         escudo.setPosition(nave.verPosition());
@@ -73,14 +87,14 @@ void Nave::actualizar(float deltaTime) {
             usarHitboxCircular = true;
             invulnerable = true;
         }
-		//hago que parpadee cuando queda poco
+        //hago que parpadee cuando queda poco
         if (!escudoDesactivandose && relojEscudo.verTiempoTranscurrido() >= duracionEscudo - 2.f) {
             int t = static_cast<int>(relojEscudo.verTiempoTranscurrido() * 10);
             if (t % 2 == 0) escudo.setColor(Color(255, 255, 255, 128));
             else escudo.setColor(Color::White);
         }
         else {
-            escudo.setColor(Color::White); 
+            escudo.setColor(Color::White);
         }
 
         if (relojEscudo.verTiempoTranscurrido() >= duracionEscudo && !escudoDesactivandose) {
@@ -91,15 +105,9 @@ void Nave::actualizar(float deltaTime) {
         }
         if (escudoDesactivandose && escudo.IsFinished("desactivando")) {
             escudoActivo = false;
-            escudoDesactivandose = false;    
+            escudoDesactivandose = false;
         }
     }
-
-    velY += gravedad * deltaTime; // v = v0 + a*t
-    nave.mover(0, velY * deltaTime); // y = y0 + v*t
-
-    propulsor.setPosition(nave.verPosition().x, nave.verPosition().y + 9);
-    propulsor.Update();
 
     if (!saltando) {
         float distanciaCaida = nave.verPosition().y - alturaInicioCaida;
@@ -109,6 +117,8 @@ void Nave::actualizar(float deltaTime) {
     }
 }
 void Nave::manejarEventos(Event& e) {
+    if (propulsorActivo) return;
+
     if (e.type == Event::KeyPressed && e.key.code == salto) {
         if (esperando) esperando = false;
         velY = fuerzaSalto; // impulso inicial hacia arriba
@@ -117,7 +127,7 @@ void Nave::manejarEventos(Event& e) {
     }
     if (e.type == Event::KeyReleased && e.key.code == Keyboard::Space) {
         saltando = false;
-        alturaInicioCaida = nave.verPosition().y; // guardamos altura desde donde cae
+        alturaInicioCaida = nave.verPosition().y;
     }
 }
 void Nave::dibujar(RenderTarget& w) {
@@ -126,7 +136,7 @@ void Nave::dibujar(RenderTarget& w) {
     }
     else {
         nave.dibujar(w);
-        if (saltando) w.draw(propulsor);
+        if (saltando || propulsorActivo) w.draw(propulsor);
 
         if (escudoActivo) {
             w.draw(escudo);
@@ -146,7 +156,7 @@ void Nave::iniciarDestruccion() {
     }
 }
 bool Nave::estaEnDestruccion() {return enDestruccion;}
-bool Nave::estaMuerto() {return vidaActual <= 0 && destruccion.IsFinished("destruccion");}
+bool Nave::estaMuerto() {return destruccion.IsFinished("destruccion");}
 
 void Nave::activarEscudo(float segundos) {
     if (!escudoActivo && !escudoDesactivandose) {
@@ -160,6 +170,24 @@ void Nave::activarEscudo(float segundos) {
         escudo.Play("desplegando");
         relojEscudo.reiniciar();
     }
+}
+bool Nave::estaConEscudo() {
+    return escudoActivo;
+}
+void Nave::activarPropulsor(float segundos, float velocidadExtra) {
+    if (!propulsorActivo) {
+        propulsorActivo = true;
+        invulnerable = true;
+        duracionPropulsor = segundos;
+        relojPropulsor.reiniciar();
+
+        // anulamos controles
+        saltando = false;
+        velY = -velocidadExtra;
+    }
+}
+bool Nave::estaConPropulsor() {
+    return propulsorActivo;
 }
 
 float clamp(float val, float minVal, float maxVal) {

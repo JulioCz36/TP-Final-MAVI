@@ -14,11 +14,9 @@ Partida::Partida(RenderWindow& v, Nave* player) :jugador(player), pausa(v), HUD(
 
 	relojGeneracion.reiniciar();
 
-	sonidoItem = make_shared<Audio>();
+
 	sonidoPartNormal = make_shared<Audio>();
 
-	sonidoItem->cargar("assets/sonidos/item_up.wav");
-	sonidoItem->queVolumen(50);
 	sonidoPartNormal->cargar("assets/sonidos/sonido_batalla_normal.wav");
 	sonidoPartNormal->queVolumen(25);
 
@@ -36,17 +34,18 @@ void Partida::actualizar(Juego& j) {
 
 		actualizarFondo();
 
-		if (jugador->estaMuerto()) {
+		if (jugador->estaEnDestruccion()) {
 			sonidoPartNormal->stop();
 			//j.finDelJuego(jugador->verPuntos());
-			return;
+		}if (jugador->estaMuerto()) {
+			//j.finDelJuego(jugador->verPuntos());
 		}
 
-		//generarItems();
+		generarItems();
+		itemYNave(deltaTime);
 		//egenerarAsteroides();
  
 		//asteroideYNave(deltaTime);
-		//itemYNave(deltaTime);
 
 		jugador->actualizar(deltaTime);
 
@@ -164,9 +163,7 @@ void Partida::asteroideYNave(float deltaTime) {
 	for (auto it = asteroides.begin(); it != asteroides.end();) {
 
 		if (jugador->colisionaCon((*it)->verBounds()) && !(*it)->estaEnDestruccion()) {
-			if (!jugador->esInvulnerable()) {
-				jugador->recibirDano((*it)->verDano());
-			}
+			jugador->recibirDano((*it)->verDano());
 			(*it)->iniciarDestruccion();
 			++it;
 			continue;
@@ -181,77 +178,73 @@ void Partida::asteroideYNave(float deltaTime) {
 		}
 	}
 }
-
-void Partida::itemYNave(float deltaTime) {
-	for (auto it = items.begin(); it != items.end(); ) {
-		(*it)->actualizar(deltaTime);
-		if ((*it)->fueraDePantalla()) {
-			it = items.erase(it);
-		}
-		else {
-			++it;
-		}
-	}
-	for (auto it = items.begin(); it != items.end(); ) {
-		if (jugador->colisionaCon((*it)->verBounds())) {
-
-			sonidoItem->play();
-
-			(*it)->aplicarEfecto(*jugador);
-
-			if ((*it)->mostrarEnHUD()) {
-				ultimo_item = (*it)->verItem();
-			}
-			it = items.erase(it);
-		}
-		else {
-			++it;
-		}
-	}
-}
-
-void Partida::generarItems() {
-	float intervalo = 3.5f;
-
-	if (relojItem.verTiempoTranscurrido() >= intervalo) {
-		int random = rand() % 100;
-
-		if (random < 30) {
-			// 0–29 → Item_puntos
-
-		}
-		else if (random < 50) {
-			// 30–49 → Item_rapida
-		}
-		else if (random < 65) {
-			// 50–64 → Item_doble
-		}
-		else if (random < 80) {
-			// 65–79 → Item_pesada
-		}
-		else if (random < 90) {
-			// 80–89 → Item_bomba
-		}
-		else {
-			// 90–99 → Item_vida
-			items.push_back(make_unique<ItemVida>());
-		}
-
-		relojItem.reiniciar();
-	}
-}
 void Partida::generarAsteroides() {
 	if (relojGeneracion.verTiempoTranscurrido() >= tiempoAsteroide) {
 		int prob = rand() % 100;
 
 		if (prob < 60) {
-			asteroides.push_back(make_unique<Asteroide>("assets/partida/asteroides/asteroide_chico_sheet.png",28,28,100, 20, 5));
-		}else if (prob < 90) {
+			asteroides.push_back(make_unique<Asteroide>("assets/partida/asteroides/asteroide_chico_sheet.png", 28, 28, 100, 20, 5));
+		}
+		else if (prob < 90) {
 			asteroides.push_back(make_unique<Asteroide>("assets/partida/asteroides/asteroide_mediano_sheet.png", 43, 43, 75, 30, 10));
-		}else {
+		}
+		else {
 			asteroides.push_back(make_unique<Asteroide>("assets/partida/asteroides/asteroide_grande_sheet.png", 89, 82, 50, 45, 20));
 		}
 
 		relojGeneracion.reiniciar();
+	}
+}
+
+void Partida::generarItems() {
+
+	float intervalo = 3.f;
+
+	if (relojItem.verTiempoTranscurrido() >= intervalo) {
+
+		int random = rand() % 100;
+
+		Vector2f spawnPos(jugador->verPos().x, jugador->verPos().y - 300.f);
+
+		if (random < 35) {
+			// 0–39 → 35%
+			if (jugador->verVida() < jugador->verVidaMax()) {
+				items.push_back(make_unique<ItemVida>(spawnPos));
+			}
+		}
+		else if (random < 55) {
+			// 35–54 → 20%
+			if (!jugador->estaConPropulsor() && !jugador->estaConEscudo()) {
+				items.push_back(make_unique<ItemPropulsor>(spawnPos));
+			}
+		}
+		else if (random < 80) {
+			// 55–79 → 25%
+			if (!jugador->estaConEscudo() && !jugador->estaConPropulsor()) {
+				items.push_back(make_unique<ItemEscudo>(spawnPos));
+			}
+		}
+		else {
+			// 80–99 → 20%
+			// No aparece nada
+		}
+
+		relojItem.reiniciar();
+	}
+}
+void Partida::itemYNave(float deltaTime) {
+	for (auto it = items.begin(); it != items.end(); ) {
+		(*it)->actualizar(deltaTime);
+
+		if ((*it)->fueraDePantalla() || (*it)->estaTerminado()) {
+			it = items.erase(it);
+		}
+		else if (!(*it)->estaTerminado() && jugador->colisionaCon((*it)->verBounds())) {
+			(*it)->recoger(*jugador);
+			++it;
+		}
+		else {
+			++it;
+		}
 	}
 }

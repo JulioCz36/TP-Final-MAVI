@@ -87,6 +87,12 @@
     <ClCompile Include="Afichmation.cpp">
       <Filter>Archivos de origen\Utilidades</Filter>
     </ClCompile>
+    <ClCompile Include="ItemEscudo.cpp">
+      <Filter>Archivos de origen\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemPropulsor.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Item.h">
@@ -139,6 +145,12 @@
     </ClInclude>
     <ClInclude Include="Audio.h">
       <Filter>Archivos de encabezado\Utilidades</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemEscudo.h">
+      <Filter>Archivos de encabezado\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemPropulsor.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
