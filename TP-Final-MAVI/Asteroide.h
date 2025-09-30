@@ -1,13 +1,14 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Afichmation.h"
+#include "Figura.h"
 using namespace sf;
 using namespace std;
 
 class Asteroide{
 	// === REPRESENTACIÓN VISUAL ===
-	Afichmation asteroide;
-	static Texture texturaSheet;
+	Figura asteroide;
+	Afichmation destruccion;
 
 	// === DESTRUCCIÓN Y ESTADO ===
 	bool enDestruccion = false;
@@ -16,11 +17,10 @@ class Asteroide{
 
 	// === ESTADÍSTICAS ===
 	int velocidad;
-	int vida;
-	int vidaMaxima;
-	int dano;
+	int vida = 1;
+	int dano = 1;
 public:
-	Asteroide(const string& texture, int anchura, int altura,float speedAsteroide, float vidaAsteroide, float danoAsteroide);
+	Asteroide(const string& texture, float speedAsteroide);
 
 	// ===  MÉTODOS PRINCIPALES ===
 	void dibujar(RenderTarget& window);

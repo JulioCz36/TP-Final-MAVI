@@ -45,11 +45,12 @@ void Partida::actualizar(Juego& j) {
 
 		generarItems();
 		itemYNave(deltaTime);
-		//egenerarAsteroides();
+		//generarAsteroides();
  
 		//asteroideYNave(deltaTime);
 
 		alturaActual = alturaReferencia - jugador->verPos().y;
+		if(alturaActual < 0) alturaActual = 0;
 		jugador->actualizar(deltaTime);
 
 		Vector2f center = camera.getCenter();
@@ -210,26 +211,22 @@ void Partida::generarItems() {
 		Vector2f spawnPos(jugador->verPos().x, jugador->verPos().y - 300.f);
 
 		if (random < 35) {
-			// 0–39 → 35%
+			// 35%
 			if (jugador->verVida() < jugador->verVidaMax()) {
 				items.push_back(make_unique<ItemVida>(spawnPos));
 			}
 		}
 		else if (random < 55) {
-			// 35–54 → 20%
+			// 20%
 			if (!jugador->estaConPropulsor() && !jugador->estaConEscudo()) {
 				items.push_back(make_unique<ItemPropulsor>(spawnPos));
 			}
 		}
 		else if (random < 80) {
-			// 55–79 → 25%
+			// 25%
 			if (!jugador->estaConEscudo() && !jugador->estaConPropulsor()) {
 				items.push_back(make_unique<ItemEscudo>(spawnPos));
 			}
-		}
-		else {
-			// 80–99 → 20%
-			// No aparece nada
 		}
 
 		relojItem.reiniciar();
@@ -239,7 +236,7 @@ void Partida::itemYNave(float deltaTime) {
 	for (auto it = items.begin(); it != items.end(); ) {
 		(*it)->actualizar(deltaTime);
 
-		if ((*it)->fueraDePantalla() || (*it)->estaTerminado()) {
+		if ((*it)->estaTerminado()) {
 			it = items.erase(it);
 		}
 		else if (!(*it)->estaTerminado() && jugador->colisionaCon((*it)->verBounds())) {
@@ -251,3 +248,7 @@ void Partida::itemYNave(float deltaTime) {
 		}
 	}
 }
+
+float Partida::verAlturaReferencia() { return alturaReferencia; }
+float Partida::verAlturaActual() { return alturaActual; }
+

@@ -12,7 +12,7 @@ class FinDelJuego : public Escena, public Menu {
 	Afichmation digito;
 	vector<Afichmation>metros;
 
-    Figura cartel;
+    Figura titulo,cartel;
 
 	int contadorActual = 0;
 	int metrosFinales;

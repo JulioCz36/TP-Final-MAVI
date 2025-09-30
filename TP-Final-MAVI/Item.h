@@ -24,7 +24,6 @@ public:
     void actualizar(float deltaTime);
 
     FloatRect verBounds();
-    bool fueraDePantalla();
     bool estaTerminado() const { return terminado; }
 
     void recoger(Nave& nave);

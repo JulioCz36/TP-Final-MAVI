@@ -8,7 +8,7 @@ MenuPrincipal::MenuPrincipal(RenderWindow& v) : Menu(v){
 
 	titulo.cargarImagen("assets/UI/titulo.png");
 	titulo.queEscala(2.5, 2.5);
-	titulo.quePosition(128/2, 50);
+	titulo.quePosition(128/2, 60);
 }
 
 void MenuPrincipal::procesoEventos(Juego& j, Event& event) {

@@ -77,5 +77,9 @@ public:
 	void reanudar();
 	void detenerSonido();
 	void pausar();
+
+	float verAlturaReferencia();
+
+	float verAlturaActual();
 };
 

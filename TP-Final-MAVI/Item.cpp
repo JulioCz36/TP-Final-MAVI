@@ -31,9 +31,6 @@ void Item::actualizar(float deltaTime) {
 
 FloatRect Item::verBounds() { return sprite.verGlobalBounds();}
 
-bool Item::fueraDePantalla() {
-    return false;
-}
 
 void Item::recoger(Nave& nave) {
     if (!recogido) {

@@ -110,11 +110,23 @@ void Nave::actualizar(float deltaTime) {
     }
 
     if (!saltando) {
-        float distanciaCaida = nave.verPosition().y - alturaInicioCaida;
-        if (distanciaCaida > limiteCaida) {
-            iniciarDestruccion();
+        if (partida) { 
+            float alturaActual = partida->verAlturaActual(); 
+
+            if (alturaActual < limiteCaida) {
+                if (nave.verPosition().y > partida->verAlturaReferencia()) {
+                    iniciarDestruccion();
+                }
+            }
+            else {
+                float distanciaCaida = nave.verPosition().y - alturaInicioCaida;
+                if (distanciaCaida > limiteCaida) {
+                    iniciarDestruccion();
+                }
+            }
         }
     }
+
 }
 void Nave::manejarEventos(Event& e) {
     if (propulsorActivo) return;

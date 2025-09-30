@@ -120,5 +120,5 @@ void Juego::volverAlMenu() {
 void Juego::salir() {w.close();}
 
 void Juego::finDelJuego(int metros){
-	cambiarScena(new FinDelJuego(w,metros));
+	cambiarScena(new FinDelJuego(w, metros));
 }

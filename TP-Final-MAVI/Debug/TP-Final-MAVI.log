@@ -2,15 +2,95 @@
 C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
   (compilando archivo de origen "FinDelJuego.cpp")
   
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,100): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,100): warning C4244:         with
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,100): warning C4244:         [
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,100): warning C4244:             T=float
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,100): warning C4244:         ]
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,70): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,70): warning C4244:         with
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,70): warning C4244:         [
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,70): warning C4244:             T=float
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(29,70): warning C4244:         ]
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(52,39): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(32,98): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(32,98): warning C4244:         with
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(32,98): warning C4244:         [
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(32,98): warning C4244:             T=float
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(32,98): warning C4244:         ]
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(32,70): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(32,70): warning C4244:         with
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(32,70): warning C4244:         [
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(32,70): warning C4244:             T=float
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(32,70): warning C4244:         ]
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(56,39): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Item.cpp
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Item.cpp")
+  
+  ItemEscudo.cpp
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "ItemEscudo.cpp")
+  
+  ItemPropulsor.cpp
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "ItemPropulsor.cpp")
+  
+  ItemVida.cpp
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "ItemVida.cpp")
+  
+  Juego.cpp
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Juego.cpp")
+  
+  Menu.cpp
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Menu.cpp")
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(476,82): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  (compilando archivo de origen "Menu.cpp")
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(476,82):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Menu.cpp(115,19):
+          Vea la referencia a la creación de una instancia de la función plantilla "std::shared_ptr<Afichmation> std::make_shared<Afichmation,const std::string&,bool,float&,float&>(const std::string &,bool &&,float &,float &)" que se está compilando
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(2913,46):
+          Vea la referencia a la creación de una instancia de la función plantilla "std::_Ref_count_obj2<Afichmation>::_Ref_count_obj2<const std::string&,_Ty,float&,float&>(const std::string &,_Ty &&,float &,float &)" que se está compilando
+          with
+          [
+              _Ty=bool
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(2100,18):
+          Vea la referencia a la creación de una instancia de la función plantilla "void std::_Construct_in_place<_Ty,const std::string&,bool,float&,float&>(_Ty &,const std::string &,bool &&,float &,float &) noexcept(false)" que se está compilando
+          with
+          [
+              _Ty=Afichmation
+          ]
+  
+  MenuPrincipal.cpp
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "MenuPrincipal.cpp")
+  
+  Nave.cpp
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Nave.cpp")
+  
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Nave.cpp(34,38): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Nave.cpp(41,30): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Nave.cpp(42,35): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+  Partida.cpp
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Partida.cpp")
+  
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Partida.cpp(3,97): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Partida.cpp(63,34): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:             _Ty=int
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56): warning C4244:         ]
+  (compilando archivo de origen "Partida.cpp")
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3630,56):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Partida.cpp(190,25):
+          Vea la referencia a la creación de una instancia de la función plantilla "std::unique_ptr<Asteroide,std::default_delete<Asteroide>> std::make_unique<Asteroide,const char(&)[52],int,int,int,int,int,0>(const char (&)[52],int &&,int &&,int &&,int &&,int &&)" que se está compilando
+  
+  PausaMenu.cpp
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "PausaMenu.cpp")
+  
+  main.cpp
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "main.cpp")
+  
+  Generando código...
   TP-Final-MAVI.vcxproj -> C:\Users\julio\Documents\GitHub\TP-Final-MAVI\Debug\TP-Final-MAVI.exe
