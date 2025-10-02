@@ -66,8 +66,10 @@ void Nave::actualizar(float deltaTime) {
         nave.mover(0, velY * deltaTime);
 
         if (relojPropulsor.verTiempoTranscurrido() >= duracionPropulsor) {
-            invulnerable = false;
             propulsorActivo = false;
+            if (!usarHitboxCircular) {
+                invulnerable = false;
+            }
         }
     }
     else {
@@ -109,37 +111,30 @@ void Nave::actualizar(float deltaTime) {
         }
     }
 
-    if (!saltando) {
-        if (partida) { 
-            float alturaActual = partida->verAlturaActual(); 
+    if (partida->verAlturaActual() > alturaMaxAlcanzada) {
+        alturaMaxAlcanzada = partida->verAlturaActual();
+    }
 
-            if (alturaActual < limiteCaida) {
-                if (nave.verPosition().y > partida->verAlturaReferencia()) {
-                    iniciarDestruccion();
-                }
+    if (!saltando) {
+        if (alturaMaxAlcanzada < limiteCaida) {
+            if (nave.verPosition().y > partida->verAlturaReferencia()) {
+                iniciarDestruccion();
             }
-            else {
-                float distanciaCaida = nave.verPosition().y - alturaInicioCaida;
-                if (distanciaCaida > limiteCaida) {
+        }else {
+            if ((alturaMaxAlcanzada - partida->verAlturaActual()) > limiteCaida) {
                     iniciarDestruccion();
-                }
             }
         }
     }
-
 }
 void Nave::manejarEventos(Event& e) {
     if (propulsorActivo) return;
 
     if (e.type == Event::KeyPressed && e.key.code == salto) {
-        if (esperando) esperando = false;
-        velY = fuerzaSalto; // impulso inicial hacia arriba
-        saltando = true;
-        propulsor.Play("propulsor1");
+        iniciarSalto();
     }
-    if (e.type == Event::KeyReleased && e.key.code == Keyboard::Space) {
-        saltando = false;
-        alturaInicioCaida = nave.verPosition().y;
+    if (e.type == Event::KeyReleased && e.key.code == salto) {
+        finalizarSalto();
     }
 }
 void Nave::dibujar(RenderTarget& w) {
@@ -154,15 +149,13 @@ void Nave::dibujar(RenderTarget& w) {
             w.draw(escudo);
         }
 
-        dibujarBox(w);
+        //ibujarBox(w);
     }
 }
 
 void Nave::iniciarDestruccion() {
     if (!enDestruccion) {
-        enDestruccion = true;
-        velY = 0;         
-        gravedad = 0;      
+        enDestruccion = true;     
         destruccion.setPosition(nave.verPosition());
         destruccion.Play("destruccion");
     }
@@ -269,3 +262,21 @@ void Nave::reanudar() {
 
 void Nave::setPartida(Partida* p) { partida = p; };
 
+void Nave::iniciarSalto() {
+    if (propulsorActivo) return;
+    if (esperando) esperando = false;
+
+    velY = fuerzaSalto;
+    saltando = true;
+    propulsor.Play("propulsor1");
+}
+void Nave::mantenerSalto() {
+    if (!propulsorActivo) {
+        velY = fuerzaSalto;
+        saltando = true;       
+    }
+}
+void Nave::finalizarSalto() {
+    saltando = false;
+    alturaInicioCaida = nave.verPosition().y;
+}

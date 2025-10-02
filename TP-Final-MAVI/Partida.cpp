@@ -1,6 +1,6 @@
 ﻿#include "Partida.h"
 
-Partida::Partida(RenderWindow& v, Nave* player) :jugador(player), pausa(v), HUD(jugador->verVida()){
+Partida::Partida(RenderWindow& v, Nave* player) :jugador(player), pausa(v), HUD(jugador->verVida()), UI(v,player){
 
 	alturaReferencia = jugador->verPos().y;
 
@@ -45,9 +45,9 @@ void Partida::actualizar(Juego& j) {
 
 		generarItems();
 		itemYNave(deltaTime);
-		//generarAsteroides();
- 
-		//asteroideYNave(deltaTime);
+
+		generarAsteroides();
+		asteroideYNave(deltaTime);
 
 		alturaActual = alturaReferencia - jugador->verPos().y;
 		if(alturaActual < 0) alturaActual = 0;
@@ -59,7 +59,7 @@ void Partida::actualizar(Juego& j) {
 			center.y = jugador->verPos().y;
 			camera.setCenter(center);
 		}
-
+		UI.actualizar();
 		HUD.actualizar(jugador->verVida(), static_cast<int>(alturaActual));
 
 	}else {
@@ -90,6 +90,7 @@ void Partida::dibujar(RenderTarget& window) {
 	fondoAdelante2.dibujar(window);
 
 	window.setView(window.getDefaultView());
+	UI.dibujar(window);
 	HUD.dibujar(window);
 
 	if (pausado) {
@@ -105,7 +106,10 @@ void Partida::procesoEventos(Juego& j, Event& e) {
 		if (e.type == Event::KeyPressed && e.key.code == Keyboard::Escape) {
 			pausar();
 		}
-		jugador->manejarEventos(e);
+		if (e.type == Event::KeyPressed || e.type == Event::KeyReleased) {
+			jugador->manejarEventos(e);
+		}
+		UI.manejarEventos(e);
 	}
 }
 
@@ -160,7 +164,7 @@ void Partida::actualizarFondo() {
 
 void Partida::asteroideYNave(float deltaTime) {
 	for (auto it = asteroides.begin(); it != asteroides.end(); ) {
-		(*it)->actualizar(deltaTime);
+		(*it)->actualizar(deltaTime, jugador->verPos().y);
 		++it;
 	}
 
@@ -184,21 +188,37 @@ void Partida::asteroideYNave(float deltaTime) {
 }
 void Partida::generarAsteroides() {
 	if (relojGeneracion.verTiempoTranscurrido() >= tiempoAsteroide) {
-		int prob = rand() % 100;
+		auto camaraY = camera.getCenter().y;
+		float spawnY = camaraY - 300.f;
+		float anchoPantalla = 128.f;
 
-		if (prob < 60) {
-			asteroides.push_back(make_unique<Asteroide>("assets/partida/asteroides/asteroide_chico_sheet.png", 28, 28, 100, 20, 5));
-		}
-		else if (prob < 90) {
-			asteroides.push_back(make_unique<Asteroide>("assets/partida/asteroides/asteroide_mediano_sheet.png", 43, 43, 75, 30, 10));
+		bool desdeIzquierda = rand() % 2 == 0;
+		bool esGrande = rand() % 2 == 0;
+
+		string textura = esGrande ? "assets/meteoritos/meteorito_grande.png" : "assets/meteoritos/meteorito_chico.png";
+
+		if (desdeIzquierda) {
+			asteroides.push_back(make_unique<Asteroide>(
+				textura,
+				60.f + rand() % 80,       
+				Vector2f(1.f, 0.f),       
+				Vector2f(-40.f, spawnY)   
+			));
 		}
 		else {
-			asteroides.push_back(make_unique<Asteroide>("assets/partida/asteroides/asteroide_grande_sheet.png", 89, 82, 50, 45, 20));
+			asteroides.push_back(make_unique<Asteroide>(
+				textura,
+				60.f + rand() % 80,
+				Vector2f(-1.f, 0.f),     
+				Vector2f(anchoPantalla + 40.f, spawnY)
+			));
 		}
 
 		relojGeneracion.reiniciar();
 	}
 }
+
+
 
 void Partida::generarItems() {
 

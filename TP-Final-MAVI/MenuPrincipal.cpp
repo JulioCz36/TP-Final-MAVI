@@ -2,9 +2,9 @@
 
 MenuPrincipal::MenuPrincipal(RenderWindow& v) : Menu(v){
     crearBoton("assets/UI/play_ui.png", Opciones::Comenzar, 29, 14, 3.f, 128 / 2, 130);
-    crearBoton("assets/UI/ayuda_ui.png", Opciones::ComoJugar, 12, 13, 2.5f, 28, 180);
-    crearBoton("assets/UI/ajustes_ui.png", Opciones::Ajustes, 12, 13, 2.5f, 64, 180);
-    crearBoton("assets/UI/salir_ui.png", Opciones::SalirDelJuego, 12, 13, 2.5f, 100, 180);
+    crearBoton("assets/UI/ayuda_ui.png", Opciones::ComoJugar, 12, 13, 3.f, 23, 180);
+    crearBoton("assets/UI/ajustes_ui.png", Opciones::Ajustes, 12, 13, 3.f, 64, 180);
+    crearBoton("assets/UI/salir_ui.png", Opciones::SalirDelJuego, 12, 13, 3.f, 105, 180);
 
 	titulo.cargarImagen("assets/UI/titulo.png");
 	titulo.queEscala(2.5, 2.5);

@@ -155,6 +155,7 @@
     <ClCompile Include="Partida.cpp" />
     <ClCompile Include="PausaMenu.cpp" />
     <ClCompile Include="Reloj.h" />
+    <ClCompile Include="UIPartida.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Afichmation.h" />
@@ -175,6 +176,7 @@
     <ClInclude Include="Nave.h" />
     <ClInclude Include="Partida.h" />
     <ClInclude Include="PausaMenu.h" />
+    <ClInclude Include="UIPartida.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

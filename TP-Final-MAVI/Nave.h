@@ -31,6 +31,7 @@ class Nave {
 	bool saltando = false;
 	float alturaInicioCaida = 0.f;
 	float limiteCaida = 500.f;   // metros antes de morir
+	float alturaMaxAlcanzada = 0.f;
 
 	// Variables de control 
 	Keyboard::Key salto = Keyboard::Space;
@@ -62,6 +63,8 @@ class Nave {
 
 	bool enPausa = false;
 
+	void dibujarBox(RenderTarget& w);
+
 public:
 	Nave(float x, float y, float vel, int vida);
 
@@ -90,7 +93,6 @@ public:
 	bool estaConPropulsor() ;
 
 	bool colisionaCon(const FloatRect& otro);
-	void dibujarBox(RenderTarget& w);
 
 	void pausar();
 	void reanudar();
@@ -98,5 +100,9 @@ public:
 	void setPartida(Partida* p);
 
 	Vector2f verPos();
+
+	void iniciarSalto();
+	void mantenerSalto();
+	void finalizarSalto();
 };
 

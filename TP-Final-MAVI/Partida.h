@@ -11,6 +11,7 @@
 #include "ItemPropulsor.h"
 
 #include "HUDPartida.h"
+#include "UIPartida.h"
 #include "Asteroide.h"
 
 #include "Reloj.h"
@@ -47,6 +48,9 @@ class Partida : public Escena {
 	Nave* jugador;
 	float alturaReferencia;
 	float alturaActual = 0.f;
+
+	//UI
+	UIPartida UI;
 
 	// === INTERFAZ DE USUARIO ===
 	HUDPartida HUD;
