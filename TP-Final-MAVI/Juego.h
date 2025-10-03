@@ -4,7 +4,6 @@
 #include "Escenas.h"
 #include "Nave.h"
 
-
 using namespace sf;
 using namespace std;
 class Escena;
@@ -38,6 +37,7 @@ public:
 
 	void reiniciar();
 	void volverAlMenu();
+	void verInstrucciones();
 	void  salir();
 	void finDelJuego(int puntos);
 };

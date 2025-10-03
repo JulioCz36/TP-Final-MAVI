@@ -143,6 +143,7 @@
     <ClCompile Include="Asteroide.cpp" />
     <ClCompile Include="FinDelJuego.cpp" />
     <ClCompile Include="HUDPartida.cpp" />
+    <ClCompile Include="Instrucciones.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemEscudo.cpp" />
     <ClCompile Include="ItemPropulsor.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="Figura.h" />
     <ClInclude Include="FinDelJuego.h" />
     <ClInclude Include="HUDPartida.h" />
+    <ClInclude Include="Instrucciones.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemEscudo.h" />
     <ClInclude Include="ItemPropulsor.h" />

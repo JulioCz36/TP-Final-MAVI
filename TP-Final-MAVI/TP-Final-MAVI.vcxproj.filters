@@ -91,9 +91,12 @@
       <Filter>Archivos de origen\Items</Filter>
     </ClCompile>
     <ClCompile Include="ItemPropulsor.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Items</Filter>
     </ClCompile>
     <ClCompile Include="UIPartida.cpp">
+      <Filter>Archivos de origen\Escenas\Partida</Filter>
+    </ClCompile>
+    <ClCompile Include="Instrucciones.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -153,9 +156,12 @@
       <Filter>Archivos de encabezado\Items</Filter>
     </ClInclude>
     <ClInclude Include="ItemPropulsor.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Items</Filter>
     </ClInclude>
     <ClInclude Include="UIPartida.h">
+      <Filter>Archivos de encabezado\Escenas\Partida</Filter>
+    </ClInclude>
+    <ClInclude Include="Instrucciones.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

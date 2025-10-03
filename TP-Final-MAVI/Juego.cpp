@@ -3,6 +3,7 @@
 #include "FinDelJuego.h"
 #include "MenuPrincipal.h"
 #include "PausaMenu.h"
+#include "Instrucciones.h"
 
 Juego::Juego() : w(VideoMode::getDesktopMode(), "Mars Express", Style::Fullscreen) {
 	w.setFramerateLimit(60);
@@ -22,7 +23,8 @@ Juego::Juego() : w(VideoMode::getDesktopMode(), "Mars Express", Style::Fullscree
 	float offsetY = (screenSize.y - 256.f * scale) / 2.f;
 	renderSprite.setPosition(offsetX, offsetY);
 
-	actual = new MenuPrincipal(w);
+	//actual = new MenuPrincipal(w);
+	actual = new Instrucciones(w);
 }
 Juego::~Juego() {
 	delete actual;
@@ -116,6 +118,10 @@ void Juego::reiniciar() {
 }
 void Juego::volverAlMenu() {
 	cambiarScena(new MenuPrincipal(w));
+}
+
+void Juego::verInstrucciones() {
+	cambiarScena(new Instrucciones(w));
 }
 void Juego::salir() {w.close();}
 

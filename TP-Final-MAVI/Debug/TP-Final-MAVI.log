@@ -1,8 +1,6 @@
-﻿  Nave.cpp
+﻿  Instrucciones.cpp
 C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
-  (compilando archivo de origen "Nave.cpp")
+  (compilando archivo de origen "Instrucciones.cpp")
   
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Nave.cpp(34,38): warning C4244: '-=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Nave.cpp(41,30): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Nave.cpp(42,35): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Instrucciones.cpp(3,159): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
   TP-Final-MAVI.vcxproj -> C:\Users\julio\Documents\GitHub\TP-Final-MAVI\Debug\TP-Final-MAVI.exe

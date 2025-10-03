@@ -127,7 +127,7 @@ void Menu::ejecutarAccion(Juego& j, Opciones accion) {
         j.iniciarPartida();
         break;
     case Opciones::ComoJugar:
-        //j.mostrarAyuda();
+        j.verInstrucciones();
         break;
     case Opciones::SalirDelJuego:
         j.salir();
