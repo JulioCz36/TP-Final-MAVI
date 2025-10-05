@@ -141,6 +141,12 @@ void Menu::ejecutarAccion(Juego& j, Opciones accion) {
     case Opciones::VolverAlMenu:
         j.volverAlMenu();
         break;
+    case Opciones::Ajustes:
+        j.irAAjustes();
+        break;
+    case Opciones::SalirDeAjustes:
+        j.salirDeAjustes();
+        break;
     default:
         break;
     }

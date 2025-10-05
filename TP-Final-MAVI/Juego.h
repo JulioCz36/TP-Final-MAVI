@@ -16,10 +16,10 @@ class Juego {
 	RenderWindow w;
 	Escena* actual;
 	Escena* prox = nullptr;
+	Escena* escenaAnterior = nullptr;
+	bool noBorrarActual = false;
 
 	Nave* jugador = nullptr;
-
-	bool debeReiniciar = false;
 
 public:
 	Juego();
@@ -38,6 +38,8 @@ public:
 	void reiniciar();
 	void volverAlMenu();
 	void verInstrucciones();
+	void irAAjustes();
+	void salirDeAjustes();
 	void  salir();
 	void finDelJuego(int puntos);
 };

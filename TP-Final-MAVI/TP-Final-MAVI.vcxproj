@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Afichmation.cpp" />
+    <ClCompile Include="Ajustes.cpp" />
     <ClCompile Include="Asteroide.cpp" />
     <ClCompile Include="FinDelJuego.cpp" />
     <ClCompile Include="HUDPartida.cpp" />
@@ -160,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Afichmation.h" />
+    <ClInclude Include="Ajustes.h" />
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Asteroide.h" />
     <ClInclude Include="Audio.h" />

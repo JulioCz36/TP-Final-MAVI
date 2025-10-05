@@ -20,6 +20,7 @@ enum class Opciones {
 	VolverAlMenu,
 	SalirDelJuego,
 	Ajustes,
+	SalirDeAjustes,
 };
 
 

@@ -4,6 +4,7 @@
 #include "MenuPrincipal.h"
 #include "PausaMenu.h"
 #include "Instrucciones.h"
+#include "Ajustes.h"
 
 Juego::Juego() : w(VideoMode::getDesktopMode(), "Mars Express", Style::Fullscreen) {
 	w.setFramerateLimit(60);
@@ -23,8 +24,7 @@ Juego::Juego() : w(VideoMode::getDesktopMode(), "Mars Express", Style::Fullscree
 	float offsetY = (screenSize.y - 256.f * scale) / 2.f;
 	renderSprite.setPosition(offsetX, offsetY);
 
-	//actual = new MenuPrincipal(w);
-	actual = new Instrucciones(w);
+	actual = new MenuPrincipal(w);
 }
 Juego::~Juego() {
 	delete actual;
@@ -36,28 +36,19 @@ void Juego::jugar() {
 		procesoEventos();
 		dibujar();
 		actualizar();
-
-		if (prox) {
-			delete actual;
-			actual = prox;
-			prox = nullptr;
-		}
-
 	}
 }
 
 void Juego::actualizar() {
 	actual->actualizar(*this);
 
-	//esto agregue para reiniciar partida en el menu pausa
-	if (debeReiniciar) {
-		debeReiniciar = false;
-		reiniciar();
-	}
 	if (prox) {
-		delete actual;
+		if (!noBorrarActual) {
+			delete actual;
+		}
 		actual = prox;
 		prox = nullptr;
+		noBorrarActual = false;
 	}
 }
 void Juego::dibujar() {
@@ -77,8 +68,6 @@ void Juego::dibujar() {
 
 	w.display();
 }
-
-
 void Juego::procesoEventos() {
 	Event e;
 	while (w.pollEvent(e)) {
@@ -123,8 +112,24 @@ void Juego::volverAlMenu() {
 void Juego::verInstrucciones() {
 	cambiarScena(new Instrucciones(w));
 }
-void Juego::salir() {w.close();}
+void Juego::irAAjustes(){
+	escenaAnterior = actual;
+	if (auto partida = dynamic_cast<Partida*>(escenaAnterior)) {
+		partida->pausar();
+	}
 
+	noBorrarActual = true;
+	cambiarScena(new Ajustes(w));
+}
+void Juego::salirDeAjustes() {
+	if (auto partida = dynamic_cast<Partida*>(escenaAnterior)) {
+		partida->reanudar();
+	}
+	cambiarScena(escenaAnterior);
+	escenaAnterior = nullptr;
+	noBorrarActual = false;
+}
+void Juego::salir() {w.close();}
 void Juego::finDelJuego(int metros){
 	cambiarScena(new FinDelJuego(w, metros));
 }

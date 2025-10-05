@@ -14,8 +14,10 @@ Partida::Partida(RenderWindow& v, Nave* player) :jugador(player), pausa(v), HUD(
 	fondoAdelante1.quePosition(128 / 2, 256 / 2);
 	fondoAdelante2.quePosition(128 / 2, fondo1.verPosition().y - fondo1.verGlobalBounds().height);
 
-	relojGeneracion.reiniciar();
+	marte.cargarImagen("assets/Fondo/planeta_marte.png");
+	marte.quePosition(128 / 2.f, alturaReferencia - DISTANCIA_A_MARTE);
 
+	relojGeneracion.reiniciar();
 
 	sonidoPartNormal = make_shared<Audio>();
 
@@ -51,6 +53,15 @@ void Partida::actualizar(Juego& j) {
 
 		alturaActual = alturaReferencia - jugador->verPos().y;
 		if(alturaActual < 0) alturaActual = 0;
+
+		if (alturaActual >= DISTANCIA_A_MARTE && !llegoMarte) {
+			llegoMarte = true;
+			sonidoPartNormal->stop();
+			// musica victoria->play();
+			// j.finDelJuegoVictoria(); por ejemplo
+			j.finDelJuego(static_cast<int>(alturaActual));
+		}
+
 		jugador->actualizar(deltaTime);
 
 		Vector2f center = camera.getCenter();
@@ -76,6 +87,10 @@ void Partida::dibujar(RenderTarget& window) {
 
 	fondo1.dibujar(window);
 	fondo2.dibujar(window);
+
+	if (marte.verPosition().y < camera.getCenter().y + camera.getSize().y / 2.f) {
+		marte.dibujar(window);
+	}
 
 	jugador->dibujar(window);
 
@@ -217,8 +232,6 @@ void Partida::generarAsteroides() {
 		relojGeneracion.reiniciar();
 	}
 }
-
-
 
 void Partida::generarItems() {
 

@@ -34,6 +34,9 @@ class Partida : public Escena {
 
 	shared_ptr<Audio> sonidoPartNormal;
 
+	float DISTANCIA_A_MARTE = 5000.f;
+	Figura marte;
+	bool llegoMarte = false;
 
 	// === Asteroide ===
 	vector<unique_ptr<Asteroide>> asteroides;
@@ -83,7 +86,6 @@ public:
 	void pausar();
 
 	float verAlturaReferencia();
-
 	float verAlturaActual();
 };
 

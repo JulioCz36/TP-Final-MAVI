@@ -97,6 +97,9 @@
       <Filter>Archivos de origen\Escenas\Partida</Filter>
     </ClCompile>
     <ClCompile Include="Instrucciones.cpp">
+      <Filter>Archivos de origen\Escenas</Filter>
+    </ClCompile>
+    <ClCompile Include="Ajustes.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -162,6 +165,9 @@
       <Filter>Archivos de encabezado\Escenas\Partida</Filter>
     </ClInclude>
     <ClInclude Include="Instrucciones.h">
+      <Filter>Archivos de encabezado\Escenas</Filter>
+    </ClInclude>
+    <ClInclude Include="Ajustes.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
