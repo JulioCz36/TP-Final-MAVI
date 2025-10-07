@@ -14,6 +14,8 @@ class FinDelJuego : public Escena, public Menu {
 
     Figura titulo,cartel;
 
+	bool victoria = false;
+
 	int contadorActual = 0;
 	int metrosFinales;
 	Reloj relojConteo;

@@ -5,14 +5,23 @@ FinDelJuego::FinDelJuego(RenderWindow& v, int _metros) : Menu(v), digito("assets
     crearBoton("assets/UI/ajustes_ui.png", Opciones::Ajustes, 12, 13, 3.f, 64, 180);
     crearBoton("assets/UI/casa_ui.png", Opciones::VolverAlMenu, 12, 13, 3.f, 105, 180);
 
+    victoria = metrosFinales >= 5000.f; 
+
     for (int i = 0; i < 10; ++i) {
         digito.Add(to_string(i), { i }, 1, true);
     }
 
-    titulo.cargarImagen("assets/UI/titulo_derrota.png");
+    if (victoria) {
+        titulo.cargarImagen("assets/UI/titulo_victoria.png");
+        cartel.cargarImagen("assets/UI/cartel_victoria.png");
+    }
+    else {
+        titulo.cargarImagen("assets/UI/titulo_derrota.png");
+        cartel.cargarImagen("assets/UI/cartel_derrota.png");
+    }
+
 	titulo.queEscala(2.f, 2.f);
     titulo.quePosition(128 / 2.f, 60);
-    cartel.cargarImagen("assets/UI/cartel_derrota.png");
     cartel.quePosition(128 / 2.f, 120);
 
     relojConteo.reiniciar();
@@ -23,21 +32,26 @@ void FinDelJuego::procesoEventos(Juego& j, Event& event){
 }
 void FinDelJuego::actualizar(Juego& j){
     actualizarMenu();
-    if (contadorActual < metrosFinales && relojConteo.verTiempoTranscurrido() > intervaloConteo) {
-        contadorActual += 10; // velocidad de suma
-        if (contadorActual > metrosFinales) contadorActual = metrosFinales;
-        relojConteo.reiniciar();
-    }
 
-    actualizarDigitos(metros, contadorActual, cartel.verPosition().x + 4, cartel.verPosition().y + 13);
+    if (!victoria) {
+        if (contadorActual < metrosFinales && relojConteo.verTiempoTranscurrido() > intervaloConteo) {
+            contadorActual += 10; // velocidad de suma
+            if (contadorActual > metrosFinales) contadorActual = metrosFinales;
+            relojConteo.reiniciar();
+        }
+
+        actualizarDigitos(metros, contadorActual, cartel.verPosition().x + 4, cartel.verPosition().y + 13);
+    }
 }
 void FinDelJuego::dibujar(RenderTarget& ventana) {
     dibujarMenu(ventana);
 
     cartel.dibujar(ventana);
     titulo.dibujar(ventana);
-    for (auto& m : metros) {
-        ventana.draw(m);
+    if (!victoria) {
+        for (auto& m : metros) {
+            ventana.draw(m);
+        }
     }
 }
 

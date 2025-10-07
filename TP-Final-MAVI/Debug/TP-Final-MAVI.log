@@ -1,6 +1,21 @@
-﻿  Instrucciones.cpp
+﻿  FinDelJuego.cpp
 C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
-  (compilando archivo de origen "Instrucciones.cpp")
+  (compilando archivo de origen "FinDelJuego.cpp")
   
-C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Instrucciones.cpp(3,159): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(43,102): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(43,102): warning C4244:         with
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(43,102): warning C4244:         [
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(43,102): warning C4244:             T=float
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(43,102): warning C4244:         ]
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(43,74): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(43,74): warning C4244:         with
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(43,74): warning C4244:         [
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(43,74): warning C4244:             T=float
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(43,74): warning C4244:         ]
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\FinDelJuego.cpp(70,39): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Juego.cpp
+C:\Users\julio\Documents\GitHub\TP-Final-MAVI\TP-Final-MAVI\Animation.h(95,13): warning C4018: '>=': no coinciden signed/unsigned
+  (compilando archivo de origen "Juego.cpp")
+  
+  Generando código...
   TP-Final-MAVI.vcxproj -> C:\Users\julio\Documents\GitHub\TP-Final-MAVI\Debug\TP-Final-MAVI.exe
