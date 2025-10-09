@@ -43,5 +43,6 @@ public:
 	// === POSICIÓN Y BOUNDS ===
 	FloatRect verBounds();
 	bool estaFueraDePantalla();
+	Vector2f verPos();
 };
 

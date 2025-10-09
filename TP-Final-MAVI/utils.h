@@ -14,6 +14,7 @@ inline Vector2f normalizar(const Vector2f& v) {
 enum class Opciones {
 	Ninguna,
 	Comenzar,
+	IniciarPartida,
 	ComoJugar,
 	Continuar,
 	Reiniciar,

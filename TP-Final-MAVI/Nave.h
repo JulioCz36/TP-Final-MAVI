@@ -24,7 +24,7 @@ class Nave {
 
 	// Movimiento vertical
 	float velY = 0.f;
-	float gravedad = 150.f;      // px/seg²
+	float gravedad = 300.f;      // px/seg²
 	float fuerzaSalto;  // px/seg (negativo porque sube)
 	bool esperando = true;
 	

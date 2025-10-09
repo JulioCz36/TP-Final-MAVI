@@ -14,7 +14,7 @@ class FinDelJuego : public Escena, public Menu {
 
     Figura titulo,cartel;
 
-	bool victoria = false;
+	bool resultado = false;
 
 	int contadorActual = 0;
 	int metrosFinales;
@@ -23,7 +23,7 @@ class FinDelJuego : public Escena, public Menu {
 
 
 public:
-	FinDelJuego(RenderWindow& v, int kilometros);
+	FinDelJuego(RenderWindow& v, bool _resultado,int kilometros);
 	void procesoEventos(Juego& j, Event& event) override;
 	void actualizar(Juego& j) override;
 	void dibujar(RenderTarget& w)override;

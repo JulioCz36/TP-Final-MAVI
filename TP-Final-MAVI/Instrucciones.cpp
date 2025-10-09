@@ -1,8 +1,6 @@
 #include "Instrucciones.h"
 
 Instrucciones::Instrucciones(RenderWindow& v) : Menu(v), barra("assets/UI/barra_espaciadora.png", true, 52, 8), mouse("assets/UI/clip_boton_subir.png", true, 35.5, 20) {
-	
-
 	cartel.cargarImagen("assets/UI/instrucciones.png");
 	cartel.quePosition(128 / 2, 120);
 

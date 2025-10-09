@@ -38,9 +38,10 @@ public:
 	void reiniciar();
 	void volverAlMenu();
 	void verInstrucciones();
+	void comenzar();
 	void irAAjustes();
 	void salirDeAjustes();
 	void  salir();
-	void finDelJuego(int puntos);
+	void finDelJuego(bool resultado, int metros);
 };
 

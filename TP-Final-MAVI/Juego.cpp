@@ -4,6 +4,7 @@
 #include "MenuPrincipal.h"
 #include "PausaMenu.h"
 #include "Instrucciones.h"
+#include "PrePArtida.h"
 #include "Ajustes.h"
 
 Juego::Juego() : w(VideoMode::getDesktopMode(), "Mars Express", Style::Fullscreen) {
@@ -85,7 +86,7 @@ void Juego::cambiarScena(Escena* scena_nueva) {
 }
 
 void Juego::iniciarPartida() {
-	jugador = new Nave(128/2,190,140, 3);
+	jugador = new Nave(128/2,190,180, 3);
 	auto nuevaPartida = new Partida(w, jugador);
 	jugador->setPartida(nuevaPartida);
 	cambiarScena(nuevaPartida);
@@ -112,6 +113,9 @@ void Juego::volverAlMenu() {
 void Juego::verInstrucciones() {
 	cambiarScena(new Instrucciones(w));
 }
+void Juego::comenzar() {
+	cambiarScena(new PrePartida(w));
+}
 void Juego::irAAjustes(){
 	escenaAnterior = actual;
 	if (auto partida = dynamic_cast<Partida*>(escenaAnterior)) {
@@ -130,6 +134,6 @@ void Juego::salirDeAjustes() {
 	noBorrarActual = false;
 }
 void Juego::salir() {w.close();}
-void Juego::finDelJuego(int metros){
-	cambiarScena(new FinDelJuego(w, metros));
+void Juego::finDelJuego(bool resultado,int metros){
+	cambiarScena(new FinDelJuego(w, resultado,metros));
 }

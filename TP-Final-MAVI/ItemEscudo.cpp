@@ -5,5 +5,5 @@ ItemEscudo::ItemEscudo(const Vector2f& pos)
 }
 
 void ItemEscudo::aplicarEfecto(Nave& nave) {
-	nave.activarEscudo(10.f);
+	nave.activarEscudo(7.f);
 }

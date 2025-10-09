@@ -156,6 +156,7 @@
     <ClCompile Include="Nave.cpp" />
     <ClCompile Include="Partida.cpp" />
     <ClCompile Include="PausaMenu.cpp" />
+    <ClCompile Include="PrePartida.cpp" />
     <ClCompile Include="Reloj.h" />
     <ClCompile Include="UIPartida.cpp" />
   </ItemGroup>
@@ -180,6 +181,7 @@
     <ClInclude Include="Nave.h" />
     <ClInclude Include="Partida.h" />
     <ClInclude Include="PausaMenu.h" />
+    <ClInclude Include="PrePartida.h" />
     <ClInclude Include="UIPartida.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>

@@ -5,5 +5,5 @@ ItemPropulsor::ItemPropulsor(const Vector2f& pos)
 }
 
 void ItemPropulsor::aplicarEfecto(Nave& nave) {
-    nave.activarPropulsor(3.f,300.f);
+    nave.activarPropulsor(1.6f,300.f);
 }

@@ -102,6 +102,9 @@
     <ClCompile Include="Ajustes.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="PrePartida.cpp">
+      <Filter>Archivos de origen\Escenas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Item.h">
@@ -167,8 +170,11 @@
     <ClInclude Include="Instrucciones.h">
       <Filter>Archivos de encabezado\Escenas</Filter>
     </ClInclude>
-    <ClInclude Include="Ajustes.h">
+    <ClInclude Include="PrePartida.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Ajustes.h">
+      <Filter>Archivos de encabezado\Escenas</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

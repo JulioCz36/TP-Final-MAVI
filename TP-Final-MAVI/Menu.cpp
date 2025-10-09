@@ -123,8 +123,11 @@ void Menu::crearBoton(const string& ruta, Opciones tipo, float anchoFrame, float
 }
 void Menu::ejecutarAccion(Juego& j, Opciones accion) {
     switch (accion) {
-    case Opciones::Comenzar:
+    case Opciones::IniciarPartida:
         j.iniciarPartida();
+        break;
+    case Opciones::Comenzar:
+        j.comenzar();
         break;
     case Opciones::ComoJugar:
         j.verInstrucciones();

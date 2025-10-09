@@ -34,14 +34,13 @@ class Partida : public Escena {
 
 	shared_ptr<Audio> sonidoPartNormal;
 
-	float DISTANCIA_A_MARTE = 5000.f;
+	float DISTANCIA_A_MARTE = 10000.f;
 	Figura marte;
-	bool llegoMarte = false;
 
 	// === Asteroide ===
 	vector<unique_ptr<Asteroide>> asteroides;
 	Reloj relojGeneracion;
-	float tiempoAsteroide = 1.5f;
+	float tiempoAsteroide = 1.f;
 
 	// === ÍTEMS,Y JUGADOR ===
 	vector<unique_ptr<Item>> items;

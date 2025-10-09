@@ -40,9 +40,8 @@ void Partida::actualizar(Juego& j) {
 
 		if (jugador->estaEnDestruccion()) {
 			sonidoPartNormal->stop();
-			//musica derrota->play();
 		}if (jugador->estaMuerto()) {
-			j.finDelJuego(static_cast<int>(alturaActual));
+			j.finDelJuego(false,static_cast<int>(alturaActual));
 		}
 
 		generarItems();
@@ -54,12 +53,10 @@ void Partida::actualizar(Juego& j) {
 		alturaActual = alturaReferencia - jugador->verPos().y;
 		if(alturaActual < 0) alturaActual = 0;
 
-		if (alturaActual >= DISTANCIA_A_MARTE && !llegoMarte) {
-			llegoMarte = true;
+		if (alturaActual >= DISTANCIA_A_MARTE) {
+
 			sonidoPartNormal->stop();
-			// musica victoria->play();
-			// j.finDelJuegoVictoria(); por ejemplo
-			j.finDelJuego(static_cast<int>(alturaActual));
+			j.finDelJuego(true,static_cast<int>(alturaActual));
 		}
 
 		jugador->actualizar(deltaTime);
@@ -204,29 +201,41 @@ void Partida::asteroideYNave(float deltaTime) {
 void Partida::generarAsteroides() {
 	if (relojGeneracion.verTiempoTranscurrido() >= tiempoAsteroide) {
 		auto camaraY = camera.getCenter().y;
-		float spawnY = camaraY - 300.f;
+		float spawnY = camaraY - 280.f;
 		float anchoPantalla = 128.f;
 
 		bool desdeIzquierda = rand() % 2 == 0;
 		bool esGrande = rand() % 2 == 0;
+		float velocidad = 140.f + rand() % 60;
 
-		string textura = esGrande ? "assets/meteoritos/meteorito_grande.png" : "assets/meteoritos/meteorito_chico.png";
-
-		if (desdeIzquierda) {
-			asteroides.push_back(make_unique<Asteroide>(
-				textura,
-				60.f + rand() % 80,       
-				Vector2f(1.f, 0.f),       
-				Vector2f(-40.f, spawnY)   
-			));
+		bool hayCerca = false;
+		for (const auto& a : asteroides) {
+			float distanciaY = abs(a->verPos().y - spawnY);
+			if (distanciaY < 40.f) { 
+				hayCerca = true;
+				break;
+			}
 		}
-		else {
-			asteroides.push_back(make_unique<Asteroide>(
-				textura,
-				60.f + rand() % 80,
-				Vector2f(-1.f, 0.f),     
-				Vector2f(anchoPantalla + 40.f, spawnY)
-			));
+
+		if (!hayCerca) {
+			string textura = esGrande
+				? "assets/meteoritos/meteorito_grande.png"
+				: "assets/meteoritos/meteorito_chico.png";
+
+			if (desdeIzquierda) {
+				asteroides.push_back(make_unique<Asteroide>(
+					textura, velocidad,
+					Vector2f(1.f, 0.f),
+					Vector2f(-40.f, spawnY)
+				));
+			}
+			else {
+				asteroides.push_back(make_unique<Asteroide>(
+					textura, velocidad,
+					Vector2f(-1.f, 0.f),
+					Vector2f(anchoPantalla + 40.f, spawnY)
+				));
+			}
 		}
 
 		relojGeneracion.reiniciar();
@@ -235,7 +244,7 @@ void Partida::generarAsteroides() {
 
 void Partida::generarItems() {
 
-	float intervalo = 3.f;
+	float intervalo = 5.f;
 
 	if (relojItem.verTiempoTranscurrido() >= intervalo) {
 
@@ -243,20 +252,20 @@ void Partida::generarItems() {
 
 		Vector2f spawnPos(jugador->verPos().x, jugador->verPos().y - 300.f);
 
-		if (random < 35) {
-			// 35%
+		if (random < 20) {
+			// 20%
 			if (jugador->verVida() < jugador->verVidaMax()) {
 				items.push_back(make_unique<ItemVida>(spawnPos));
 			}
 		}
-		else if (random < 55) {
-			// 20%
+		else if (random < 30) {
+			// 10%
 			if (!jugador->estaConPropulsor() && !jugador->estaConEscudo()) {
 				items.push_back(make_unique<ItemPropulsor>(spawnPos));
 			}
 		}
-		else if (random < 80) {
-			// 25%
+		else if (random < 45) {
+			// 15%
 			if (!jugador->estaConEscudo() && !jugador->estaConPropulsor()) {
 				items.push_back(make_unique<ItemEscudo>(spawnPos));
 			}

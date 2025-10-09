@@ -61,3 +61,7 @@ bool Asteroide::estaMuerto() {return destruccion.IsFinished("destruccion");}
 
 bool  Asteroide::estaFueraDePantalla() {return fueraDePantalla;}
 FloatRect Asteroide::verBounds() {return asteroide.verGlobalBounds();}
+
+Vector2f Asteroide::verPos() {
+	return asteroide.verPosition();
+};

@@ -1,17 +1,15 @@
 #include "FinDelJuego.h"
 
-FinDelJuego::FinDelJuego(RenderWindow& v, int _metros) : Menu(v), digito("assets/UI/numeros.png", true, 7, 12), metrosFinales(_metros) {
+FinDelJuego::FinDelJuego(RenderWindow& v, bool _resultado,int _metros) : Menu(v), digito("assets/UI/numeros.png", true, 7, 12), resultado(_resultado), metrosFinales(_metros) {
     crearBoton("assets/UI/reiniciar_ui.png", Opciones::Reiniciar, 12, 13, 3.f, 23, 180);
     crearBoton("assets/UI/ajustes_ui.png", Opciones::Ajustes, 12, 13, 3.f, 64, 180);
     crearBoton("assets/UI/casa_ui.png", Opciones::VolverAlMenu, 12, 13, 3.f, 105, 180);
-
-    victoria = metrosFinales >= 5000.f; 
 
     for (int i = 0; i < 10; ++i) {
         digito.Add(to_string(i), { i }, 1, true);
     }
 
-    if (victoria) {
+    if (resultado) {
         titulo.cargarImagen("assets/UI/titulo_victoria.png");
         cartel.cargarImagen("assets/UI/cartel_victoria.png");
     }
@@ -33,9 +31,9 @@ void FinDelJuego::procesoEventos(Juego& j, Event& event){
 void FinDelJuego::actualizar(Juego& j){
     actualizarMenu();
 
-    if (!victoria) {
+    if (!resultado) {
         if (contadorActual < metrosFinales && relojConteo.verTiempoTranscurrido() > intervaloConteo) {
-            contadorActual += 10; // velocidad de suma
+            contadorActual += 100; // velocidad de suma
             if (contadorActual > metrosFinales) contadorActual = metrosFinales;
             relojConteo.reiniciar();
         }
@@ -48,7 +46,7 @@ void FinDelJuego::dibujar(RenderTarget& ventana) {
 
     cartel.dibujar(ventana);
     titulo.dibujar(ventana);
-    if (!victoria) {
+    if (!resultado) {
         for (auto& m : metros) {
             ventana.draw(m);
         }
