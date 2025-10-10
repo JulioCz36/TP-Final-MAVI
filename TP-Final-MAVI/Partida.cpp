@@ -17,6 +17,9 @@ Partida::Partida(RenderWindow& v, Nave* player) :jugador(player), pausa(v), HUD(
 	marte.cargarImagen("assets/Fondo/planeta_marte.png");
 	marte.quePosition(128 / 2.f, alturaReferencia - DISTANCIA_A_MARTE);
 
+	basePrincipal.cargarImagen("assets/Fondo/base_principal.png");
+	basePrincipal.quePosition(128 / 2.f, jugador->verPos().y + 5);
+
 	relojGeneracion.reiniciar();
 
 	sonidoPartNormal = make_shared<Audio>();
@@ -84,6 +87,8 @@ void Partida::dibujar(RenderTarget& window) {
 
 	fondo1.dibujar(window);
 	fondo2.dibujar(window);
+
+	basePrincipal.dibujar(window);
 
 	if (marte.verPosition().y < camera.getCenter().y + camera.getSize().y / 2.f) {
 		marte.dibujar(window);

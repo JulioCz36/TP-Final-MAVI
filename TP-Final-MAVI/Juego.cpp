@@ -86,7 +86,7 @@ void Juego::cambiarScena(Escena* scena_nueva) {
 }
 
 void Juego::iniciarPartida() {
-	jugador = new Nave(128/2,190,180, 3);
+	jugador = new Nave(128/2,185,180, 3);
 	auto nuevaPartida = new Partida(w, jugador);
 	jugador->setPartida(nuevaPartida);
 	cambiarScena(nuevaPartida);

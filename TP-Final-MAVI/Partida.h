@@ -32,6 +32,8 @@ class Partida : public Escena {
 	float fondoVelocidad = 100.f;
 	Reloj relojDeltaTime;
 
+	Figura basePrincipal;
+
 	shared_ptr<Audio> sonidoPartNormal;
 
 	float DISTANCIA_A_MARTE = 10000.f;
