@@ -1,4 +1,4 @@
-#pragma once
+ #pragma once
 #include <SFML/Graphics.hpp>
 #include "Nave.h"
 #include "Figura.h"

@@ -20,6 +20,8 @@ class Nave {
 	Afichmation propulsor;
 	Afichmation escudo;
 
+	shared_ptr<Audio>sonidoImpacto, sonidoPropulsor, sonidoEscudo;
+
 	int vidaActual, vidaMaxima;
 
 	// Movimiento vertical
@@ -33,27 +35,33 @@ class Nave {
 	float limiteCaida = 500.f;   // metros antes de morir
 	float alturaMaxAlcanzada = 0.f;
 
-	// Variables de control 
+	//Animación hit
+	bool enDanio = false;
+	Reloj relojDanio;
+	float duracionDanio = 0.8f; 
+	float intervaloDanio = 0.1f;
+
+	// control 
 	Keyboard::Key salto = Keyboard::Space;
 
-	// Variables destrucción
-	bool enDestruccion = false;
-
-	// ----------------- Escudo -----------------
+	// Escudo 
 	bool escudoActivo = false;
 	bool escudoDesactivandose = false;
 	float duracionEscudo = 0.f;     
 	Reloj relojEscudo;
 
-	// Variables invulnerabilidad
+	// invulnerabilidad
 	bool invulnerable = false;
+	
+	// destrucción
+	bool enDestruccion = false;
 
-	// ----------------- Propulsor Item -----------------
+	// item propulsor
 	bool propulsorActivo = false;
 	float duracionPropulsor = 0.f;
 	Reloj relojPropulsor;
 
-	// Variables de control de Hurtbox y Hitbox
+	// control de Hurtbox y Hitbox
 	Vector2f tam_central = { 0, 0 };
 	Vector2f tam_superior = { 0, 0 };
 	float offsetYSuperior = 0.f;
@@ -68,30 +76,33 @@ class Nave {
 public:
 	Nave(float x, float y, float vel, int vida);
 
-	// -----------------  MÉTODOS PRINCIPALES -----------------
+	// MÉTODOS PRINCIPALES
 
 	void actualizar(float deltaTime);
 	void manejarEventos(Event& e);
 	void dibujar(RenderTarget& w);
 
-	// ----------------- Vida e invulnerabilidad -----------------
+	// Vida
 
 	void recibirDano(float dano);
 	float verVida();
 	float verVidaMax();
 	void aumentarVida(int canVida);
 
-	// ----------------- destrucción -----------------
+	// destrucción
 
 	void iniciarDestruccion();
 	bool estaEnDestruccion();
 	bool estaMuerto();
 
+
+	// Items
 	void activarEscudo(float segundos);
 	bool estaConEscudo();
 	void activarPropulsor(float segundos, float velocidadExtra);
 	bool estaConPropulsor() ;
 
+	// otros
 	bool colisionaCon(const FloatRect& otro);
 
 	void pausar();

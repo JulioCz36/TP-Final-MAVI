@@ -4,19 +4,20 @@
 #include "Figura.h"
 #include "utils.h"
 #include "Nave.h"
+#include "Audio.h"
 using namespace sf;
 using namespace std;
 
 class Asteroide{
-	// === REPRESENTACIÓN VISUAL ===
 	Figura asteroide;
 	Afichmation destruccion;
+	shared_ptr<Audio>sonidoHit;
 
-	// === DESTRUCCIÓN Y ESTADO ===
+	// destrucción
 	bool enDestruccion = false;
 	bool fueraDePantalla = false;
 
-	// === ESTADÍSTICAS ===
+	// configuración
 	int velocidad;
 	int vida = 1;
 	int dano = 1;
@@ -24,23 +25,22 @@ class Asteroide{
 public:
 	Asteroide(const string& texture, float speedMeteor, Vector2f dir, Vector2f pos);
 
-	// ===  MÉTODOS PRINCIPALES ===
 	void dibujar(RenderTarget& window);
 	void actualizar(float deltaTime, float posY);
 
-	// === INTERACCIÓN ===
+	// interacción
 	void recibirDano(float danoRecibido);
 	float verDano() const;
 
-	// === DESTRUCCIÓN ===
+	// destrucción
 	void iniciarDestruccion();
 	bool estaEnDestruccion() const;
 
-	// === COLISIÓN Y VIDA ===
+	// colision y vida
 	bool estaMuerto();
 	bool colisionaCon(const FloatRect& objeto);
 
-	// === POSICIÓN Y BOUNDS ===
+	// posición y bounds
 	FloatRect verBounds();
 	bool estaFueraDePantalla();
 	Vector2f verPos();

@@ -142,6 +142,7 @@
     <ClCompile Include="Afichmation.cpp" />
     <ClCompile Include="Ajustes.cpp" />
     <ClCompile Include="Asteroide.cpp" />
+    <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="FinDelJuego.cpp" />
     <ClCompile Include="HUDPartida.cpp" />
     <ClCompile Include="Instrucciones.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Asteroide.h" />
     <ClInclude Include="Audio.h" />
+    <ClInclude Include="AudioManager.h" />
     <ClInclude Include="Escenas.h" />
     <ClInclude Include="Figura.h" />
     <ClInclude Include="FinDelJuego.h" />

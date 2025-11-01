@@ -77,7 +77,6 @@ class Partida : public Escena {
 public:
 	Partida(RenderWindow& v,Nave* jugador);
 
-	// === MÉTODOS PRINCIPALES ===
 	void actualizar(Juego& j) override;
 	void dibujar(RenderTarget& window) override;
 	void procesoEventos(Juego& j, Event& event) override;

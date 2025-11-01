@@ -6,6 +6,18 @@ propulsor("assets/Jugador/propulsor.png",true,8,8), escudo("assets/Jugador/escud
 
 	vidaActual = vidaMaxima;
 
+    sonidoImpacto = make_shared<Audio>();
+    sonidoImpacto->cargar("assets/sonidos/impact.wav");
+    sonidoImpacto->queVolumen(50);
+
+    sonidoPropulsor = make_shared<Audio>();
+    sonidoPropulsor->cargar("assets/sonidos/propulsor.wav");
+    sonidoPropulsor->queVolumen(30);
+
+    sonidoEscudo = make_shared<Audio>();
+    sonidoEscudo->cargar("assets/sonidos/escudo_up.wav");
+    sonidoEscudo->queVolumen(50);
+
 	nave.cargarImagen("assets/Jugador/nave.png");
     nave.quePosition(x, y);
 
@@ -18,7 +30,7 @@ propulsor("assets/Jugador/propulsor.png",true,8,8), escudo("assets/Jugador/escud
 
 	escudo.setScale(2, 2);
     escudo.Add("desplegando", { 0,1,2,3 }, 6, false);
-    escudo.Add("acticvado", { 3 }, 6, true);
+    escudo.Add("activado", { 3 }, 6, true);
     escudo.Add("desactivando", { 3,2,1,0 }, 6, false);
 
     //hurtbox personalizada;
@@ -31,7 +43,12 @@ propulsor("assets/Jugador/propulsor.png",true,8,8), escudo("assets/Jugador/escud
 }
 
 void Nave::recibirDano(float dano) {
-    if (!invulnerable) vidaActual -= dano;
+    if (!invulnerable) {
+        vidaActual -= dano;
+
+        enDanio = true;
+        relojDanio.reiniciar();
+    }
 
     if (vidaActual <= 0) {
         vidaActual = 0;
@@ -59,6 +76,21 @@ void Nave::actualizar(float deltaTime) {
 
     if (esperando) return;
 
+    if (enDanio) {
+        float t = relojDanio.verTiempoTranscurrido();
+
+        int fase = static_cast<int>(t / intervaloDanio);
+        if (fase % 2 == 0)
+            nave.queColor(Color(255, 255, 255, 128));
+        else
+            nave.queColor(Color::White);
+
+        if (t >= duracionDanio) {
+            enDanio = false;
+            nave.queColor(Color::White);
+        }
+    }
+
     if (propulsorActivo) {
         if (!propulsor.IsPlaying("propulsor2")) {
             propulsor.Play("propulsor2");
@@ -85,7 +117,8 @@ void Nave::actualizar(float deltaTime) {
         escudo.Update();
 
         if (escudo.IsFinished("desplegando") && !escudoDesactivandose) {
-            escudo.Play("acticvado");
+            escudo.Play("activado");
+			sonidoEscudo->play();
             usarHitboxCircular = true;
             invulnerable = true;
         }
@@ -155,6 +188,7 @@ void Nave::dibujar(RenderTarget& w) {
 
 void Nave::iniciarDestruccion() {
     if (!enDestruccion) {
+        sonidoImpacto->play();
         enDestruccion = true;     
         destruccion.setPosition(nave.verPosition());
         destruccion.Play("destruccion");
@@ -268,6 +302,7 @@ void Nave::iniciarSalto() {
 
     velY = fuerzaSalto;
     saltando = true;
+    sonidoPropulsor->play();
     propulsor.Play("propulsor1");
 }
 void Nave::mantenerSalto() {

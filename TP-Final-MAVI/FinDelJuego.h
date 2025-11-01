@@ -3,6 +3,7 @@
 #include "Figura.h"
 #include "Escenas.h"
 #include "Menu.h"
+#include "Audio.h"
 
 using namespace sf;
 using namespace std;
@@ -15,6 +16,8 @@ class FinDelJuego : public Escena, public Menu {
     Figura titulo,cartel;
 
 	bool resultado = false;
+
+	shared_ptr<Audio>sonidoResultado;
 
 	int contadorActual = 0;
 	int metrosFinales;

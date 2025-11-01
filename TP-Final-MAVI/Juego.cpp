@@ -7,7 +7,7 @@
 #include "PrePArtida.h"
 #include "Ajustes.h"
 
-Juego::Juego() : w(VideoMode::getDesktopMode(), "Mars Express", Style::Fullscreen) {
+Juego::Juego() : w(VideoMode::getDesktopMode(), "Mars Express", Style::Default) {
 	w.setFramerateLimit(60);
 
 	renderTexture.create(128, 256);
@@ -42,15 +42,16 @@ void Juego::jugar() {
 
 void Juego::actualizar() {
 	actual->actualizar(*this);
+	if (escenaAnterior) escenaAnterior->actualizar(*this);
 
 	if (prox) {
-		if (!noBorrarActual) {
-			delete actual;
-		}
+		if (!noBorrarActual) delete actual;
+
 		actual = prox;
 		prox = nullptr;
 		noBorrarActual = false;
 	}
+
 }
 void Juego::dibujar() {
 	renderTexture.clear();
@@ -118,17 +119,10 @@ void Juego::comenzar() {
 }
 void Juego::irAAjustes(){
 	escenaAnterior = actual;
-	if (auto partida = dynamic_cast<Partida*>(escenaAnterior)) {
-		partida->pausar();
-	}
-
 	noBorrarActual = true;
 	cambiarScena(new Ajustes(w));
 }
 void Juego::salirDeAjustes() {
-	if (auto partida = dynamic_cast<Partida*>(escenaAnterior)) {
-		partida->reanudar();
-	}
 	cambiarScena(escenaAnterior);
 	escenaAnterior = nullptr;
 	noBorrarActual = false;

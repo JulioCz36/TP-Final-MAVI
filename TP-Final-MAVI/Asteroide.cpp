@@ -3,6 +3,10 @@
 Asteroide::Asteroide(const string& texture, float speedMeteor, Vector2f dir, Vector2f pos) :
 	destruccion("assets/meteoritos/meteorito_destruido.png", true, 8, 8), velocidad(speedMeteor), direccion(normalizar(dir)) {
 
+	sonidoHit = make_shared<Audio>();
+	sonidoHit->cargar("assets/sonidos/hit.wav");
+	sonidoHit->queVolumen(50);
+
 	asteroide.cargarImagen(texture);
 	asteroide.quePosition(pos.x, pos.y);
 	
@@ -51,6 +55,7 @@ float Asteroide::verDano() const {return dano;}
 
 void Asteroide::iniciarDestruccion() {
 	if (!enDestruccion) {
+		sonidoHit->play();
 		enDestruccion = true;
 		destruccion.setPosition(asteroide.verPosition());
 		destruccion.Play("destruccion");

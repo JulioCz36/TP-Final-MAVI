@@ -9,7 +9,7 @@ Menu::Menu(RenderWindow& v)
 
     sonidoDeFondo.cargar("assets/sonidos/sonido_menu.wav");
     sonidoDeFondo.queVolumen(25);
-    sonidoHover.cargar("assets/sonidos/hover.wav");
+    sonidoHover.cargar("assets/sonidos/button.wav");
     sonidoHover.queVolumen(20);
 
 };

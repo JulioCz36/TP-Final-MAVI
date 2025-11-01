@@ -17,7 +17,6 @@ class HUDPartida{
 public:
     HUDPartida(int vidaMax);
 
-    // ===  MÉTODOS PRINCIPALES ===
     void actualizar(int vida_t, int metros_t);
     void dibujar(RenderTarget& window);
 

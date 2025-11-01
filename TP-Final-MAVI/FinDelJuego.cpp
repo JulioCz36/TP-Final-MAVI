@@ -9,13 +9,20 @@ FinDelJuego::FinDelJuego(RenderWindow& v, bool _resultado,int _metros) : Menu(v)
         digito.Add(to_string(i), { i }, 1, true);
     }
 
+    sonidoResultado = make_shared<Audio>();
+    sonidoResultado->queVolumen(50);
+
     if (resultado) {
         titulo.cargarImagen("assets/UI/titulo_victoria.png");
         cartel.cargarImagen("assets/UI/cartel_victoria.png");
+        sonidoResultado->cargar("assets/sonidos/sonido_victoria.wav");
+        sonidoResultado->play();
     }
     else {
         titulo.cargarImagen("assets/UI/titulo_derrota.png");
         cartel.cargarImagen("assets/UI/cartel_derrota.png");
+        sonidoResultado->cargar("assets/sonidos/sonido_derrota.wav");
+        sonidoResultado->play();
     }
 
 	titulo.queEscala(2.f, 2.f);
